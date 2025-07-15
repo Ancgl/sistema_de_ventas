@@ -5,7 +5,7 @@ include ('../layout/sesion.php');
 include ('../layout/parte1.php');
 include ('../app/controllers/ventas/listado_de_ventas.php');
 include ('../app/controllers/almacen/listado_de_productos.php');
-
+include ('../app/controllers/clientes/listado_de_clientes.php');
 
 ?>
 
@@ -162,9 +162,10 @@ include ('../app/controllers/almacen/listado_de_productos.php');
                                                                </div>
                                                            </div>
                                                            <button id="btn_registar_carrito" style="float: right" class="btn btn-primary">Agregar</button>
+                                                           <div id="respuesta_carrito"></div>
                                                            <script>
                                                                 $(btn_registar_carrito).click(function(){
-                                                                    var id_venta = '<?php echo $contador_de_ventas + 1; ?>';
+                                                                    var nro_venta = '<?php echo $contador_de_ventas + 1; ?>';
                                                                     var id_producto = $('#id_producto').val();
                                                                     var cantidad = $('#cantidad').val();
                                                                     
@@ -173,7 +174,11 @@ include ('../app/controllers/almacen/listado_de_productos.php');
                                                                     }else if(cantidad=="") {
                                                                         alert("Debe de llenar la cantidad de los Productos");
                                                                     }else{
-                                                                        alert ("Listo para agregar");
+                                                                        //alert ("Listo para agregar");
+                                                                        var url = "../app/controllers/ventas/registrar_carrito.php";
+                                                                        $.get(url,{nro_venta:nro_venta, id_producto:id_producto, cantidad: cantidad},function (datos) {
+                                                                            $('#respuesta_carrito').html(datos);
+                                                                        });
                                                                     }
                                                                 });
                                                            </script>
@@ -201,12 +206,56 @@ include ('../app/controllers/almacen/listado_de_productos.php');
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                        <?php 
+                                                        $contador_de_carrito = 0;
+                                                        $cantidad_total= 0;
+                                                        $precio_unitario_total = 0;
+                                                        $precio_total = 0;
+                                                        $nro_venta = $contador_de_ventas + 1;
+                                                        $sql_carrito = "SELECT *, pro.nombre as nombre_producto, pro.descripcion as descripcion, pro.precio_venta as precio_venta  FROM tb_carrito AS carr INNER JOIN tb_almacen as pro ON carr.id_producto = pro.id_producto WHERE '$nro_venta' ORDER BY id_carrito ASC";
+                                                        $query_carrito = $pdo->prepare($sql_carrito);
+                                                        $query_carrito->execute();
+                                                        $carrito_datos = $query_carrito->fetchAll(PDO::FETCH_ASSOC);
+                                                        foreach ($carrito_datos as $carrito_dato) {
+                                                            $id_carrito = $carrito_dato ['id_carrito'];
+                                                            $contador_de_carrito = $contador_de_carrito + 1; 
+                                                            $cantidad_total = $cantidad_total + $carrito_dato ['cantidad']; 
+                                                            $precio_unitario_total = $precio_unitario_total + floatval($carrito_dato ['precio_venta']);
+                                                            ?>
+                                                        <tr>
+                                                            <td><center><?php echo $contador_de_carrito;?></center></td>
+                                                            <td><?php echo $carrito_dato ['nombre_producto'];?></td>
+                                                            <td><?php echo $carrito_dato ['descripcion'];?></td>
+                                                            <td><center><?php echo $carrito_dato ['cantidad'];?></center></td>
+                                                            <td><center><?php echo $carrito_dato ['precio_venta'];?></center></td>
+                                                            <td>
+                                                                <center>
+                                                                    <?php 
+                                                                    $cantidad = floatval($carrito_dato ['cantidad']);
+                                                                    $precio_venta = floatval($carrito_dato ['precio_venta']);
+                                                                    echo $subtotal = $cantidad * $precio_venta;
+                                                                    $precio_total = $precio_total + $subtotal;
+                                                                    ?> 
+                                                                </center>
+                                                            </td>
+                                                            <td> 
+                                                                <form action="../app/controllers/ventas/borrar_carrito.php" method="post">
+                                                                    <input type="text" name="id_carrito" value="<?php echo $id_carrito?>" hidden>
+                                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Borrar</button>
+                                                                </form>
+                                                            </td>
+                                                        </tr>
+                                                        <?php  
+                                                        }                                                      
+                                                        ?>
                                                          
                                                         <tr>
-                                                            <th colspan="3" style="background-color: #e7e7e7; text-align: right;">Total</th>
-                                                            <th><center>4</center></th>
-                                                            <th><center>20</center></th>
-                                                            <th><center>40</center></th>
+                                                            <th colspan="3" style="background-color: #e7e7e7; text-align: right;">Total :</th>
+                                                            <th> <center> <?php echo $cantidad_total;?> </center> </th>
+                                                            <th><center><?php echo $precio_unitario_total;?></center></th>
+                                                            <th style="background-color: #b4d61dff;"><center><?php echo $precio_total?></center></th>
+                                                            
+                                                        </tr>
                                                     </tbody>
                                             </table>
                                        </div>
@@ -235,7 +284,104 @@ include ('../app/controllers/almacen/listado_de_productos.php');
                         
 
                         <div class="card-body" >
-                            fdvbfcxv 
+                            <B>Cliente</B>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                               data-target="#modal-buscar_cliente">
+                                           <i class="fa fa-search"></i>
+                                           Buscar Cliente
+                                       </button>
+                                       <!-- modal para visualizar datos de los proveedor -->
+                                       <div class="modal fade" id="modal-buscar_cliente">
+                                           <div class="modal-dialog modal-lg">
+                                               <div class="modal-content">
+                                                   <div class="modal-header" style="background-color: #1d36b6;color: white">
+                                                       <h4 class="modal-title">Busqueda del cliente</h4>
+                                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                           <span aria-hidden="true">&times;</span>
+                                                       </button>
+                                                   </div>
+                                                   <div class="modal-body">
+                                                       <div class="table table-responsive">
+                                                           <table id="example2" class="table table-bordered table-striped table-sm">
+                                                               <thead>
+                                                               <tr>
+                                                                   <th><center>Nro</center></th>
+                                                                   <th><center>Selecionar</center></th>
+                                                                   <th><center>Nombre</center></th>
+                                                                   <th><center>DNI/NIT</center></th>
+                                                                   <th><center>Celular</center></th>
+                                                                   <th><center>Correo</center></th>
+                                                               </tr>
+                                                               </thead>
+                                                               <tbody>
+                                                               <?php
+                                                               $contador_de_clientes = 0;
+                                                               foreach ($clientes_datos as $clientes_dato){
+                                                                   $id_cliente = $clientes_dato['id_cliente'];
+                                                                   $contador_de_clientes = $contador_de_clientes + 1;?>
+                                                                   <tr>
+                                                                        <td><center><?php echo $contador_de_clientes; ?></center></td>
+                                                                        <td>
+                                                                            <center><button id="btn_pasar_cliente<?php echo $id_cliente?>"  class="btn btn-info">Seleccionar</button></center>
+                                                                            <script>
+                                                                                $('#btn_pasar_cliente<?php echo $id_cliente?>').click (function () {
+                                                                                    var nombre_cliente = '<?php echo $clientes_dato ['nombre_cliente']; ?>';
+                                                                                    $('#nombre_cliente').val(nombre_cliente);
+
+                                                                                    var nit_ci_cliente = '<?php echo $clientes_dato ['nit_ci_cliente']; ?>';
+                                                                                    $('#nit_ci_cliente').val(nit_ci_cliente);
+
+                                                                                    var celular_cliente = '<?php echo $clientes_dato ['celular_cliente']; ?>';
+                                                                                    $('#celular_cliente').val(celular_cliente);
+
+                                                                                    var email_cliente = '<?php echo $clientes_dato ['email_cliente']; ?>';
+                                                                                    $('#email_cliente').val(email_cliente);
+
+                                                                                    $('#modal-buscar_cliente').modal('toggle');
+                                                                                    
+                                                                                });
+                                                                            </script>                                                                            
+                                                                        </td>
+                                                                        <td><?php echo $clientes_dato ['nombre_cliente'] ?></td>
+                                                                        <td><center><?php echo $clientes_dato ['nit_ci_cliente'] ?></center></td>
+                                                                        <td><center><?php echo $clientes_dato ['celular_cliente'] ?></center></td>
+                                                                        <td><center><?php echo $clientes_dato ['email_cliente'] ?></center></td>
+                                                                   </tr>
+                                                                   <?php
+                                                               }
+                                                               ?>
+                                                               </tbody>
+                                                               
+                                                           </table>
+                                                    
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                               <!-- /.modal-content -->
+                                           </div>
+                                           <!-- /.modal-dialog -->
+                                       </div>
+                                       <br>
+                                       <br>
+                                       <div class="row">
+                                            <div class="col-md-3">
+                                                <label for="">Nombre </label>
+                                                <input type="text" class="form-control" id="nombre_cliente">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="">DNI </label>
+                                                <input type="text" class="form-control" id="nit_ci_cliente">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="">Telefono</label>
+                                                <input type="text" class="form-control" id="celular_cliente">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="">Correo</label>
+                                                <input type="text" class="form-control" id="email_cliente">
+                                            </div>
+                                        
+                                       </div>
                         </div>
 
                     </div>
@@ -289,12 +435,12 @@ include ('../app/controllers/almacen/listado_de_productos.php');
             "pageLength": 5,
             "language": {
                 "emptyTable": "No hay información",
-                "info": "Mostrando _START_ a _END_ de _TOTAL_ Proveedores",
-                "infoEmpty": "Mostrando 0 a 0 de 0 Proveedores",
-                "infoFiltered": "(Filtrado de _MAX_ total Proveedores)",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ Clientes",
+                "infoEmpty": "Mostrando 0 a 0 de 0 Clientes",
+                "infoFiltered": "(Filtrado de _MAX_ total Clientes)",
                 "infoPostFix": "",
                 "thousands": ",",
-                "lengthMenu": "Mostrar _MENU_ Proveedores",
+                "lengthMenu": "Mostrar _MENU_ Clientes",
                 "loadingRecords": "Cargando...",
                 "processing": "Procesando...",
                 "search": "Buscador:",
