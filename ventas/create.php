@@ -272,7 +272,7 @@ include ('../app/controllers/clientes/listado_de_clientes.php');
 
 
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-9">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
                             <h3 class="card-title"> <i class="fa fa-user-check"></i> Datos del Cliente </h3>
@@ -296,6 +296,13 @@ include ('../app/controllers/clientes/listado_de_clientes.php');
                                                <div class="modal-content">
                                                    <div class="modal-header" style="background-color: #1d36b6;color: white">
                                                        <h4 class="modal-title">Busqueda del cliente</h4>
+                                                       <div style="width: 10px;"></div>
+                                                       <button type="button" class="btn btn-warning" data-toggle="modal"
+                                                                data-target="#modal-agregar_cliente">
+                                                            <i class="fa fa-users"></i>
+                                                            Agregar Nuevo Cliente
+                                                        </button>
+
                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                            <span aria-hidden="true">&times;</span>
                                                        </button>
@@ -325,6 +332,9 @@ include ('../app/controllers/clientes/listado_de_clientes.php');
                                                                             <center><button id="btn_pasar_cliente<?php echo $id_cliente?>"  class="btn btn-info">Seleccionar</button></center>
                                                                             <script>
                                                                                 $('#btn_pasar_cliente<?php echo $id_cliente?>').click (function () {
+                                                                                    var id_cliente = '<?php echo $clientes_dato ['id_cliente']; ?>';
+                                                                                    $('#id_cliente').val(id_cliente);
+
                                                                                     var nombre_cliente = '<?php echo $clientes_dato ['nombre_cliente']; ?>';
                                                                                     $('#nombre_cliente').val(nombre_cliente);
 
@@ -365,6 +375,7 @@ include ('../app/controllers/clientes/listado_de_clientes.php');
                                        <br>
                                        <div class="row">
                                             <div class="col-md-3">
+                                                <input type="text" id="id_cliente" hidden>
                                                 <label for="">Nombre </label>
                                                 <input type="text" class="form-control" id="nombre_cliente">
                                             </div>
@@ -387,6 +398,67 @@ include ('../app/controllers/clientes/listado_de_clientes.php');
                     </div>
 
                 </div>
+                <div class="col-md-3">
+                    <div class="card card-outline card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title"> <i class="fa fa-shopping-basket"></i>  Registra Venta </h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="">Monto a cancelar</label>
+                                <input type="text" id="total_a_cancelar" style=" text-align: center; background-color: #85c71aff;" class="form-control" value="<?php echo $precio_total ?>" disabled>
+                                
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Total pagado</label>
+                                        <input type="text" id="total_pagado" class="form-control">
+                                        <script>
+                                            $('#total_pagado').keyup(function (){
+                                                var total_a_cancelar = $('#total_a_cancelar').val();
+                                                var total_pagado = $('#total_pagado').val();
+                                                var cambio = parseFloat(total_pagado) - parseFloat(total_a_cancelar);
+                                                $('#cambio').val(cambio);
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Vuelto</label>
+                                        <input type="text" id="cambio" class="form-control" disabled>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <hr>
+                            <div class="form-group">
+                                <button id="btn_guardar_venta" class="btn btn-primary btn-block">Guardar Venta</button>
+                                <script>
+                                    $('#btn_guardar_venta').click(function () {
+                                        var nro_venta = '<?php echo $contador_de_ventas + 1; ?>';
+                                        var id_cliente = $('#id_cliente').val();
+                                        var total_a_cancelar = $('#total_a_cancelar').val();
+                                        
+                                        if (id_cliente=="") {
+                                            alert("Debe de completar los datos del cliente");
+                                        }
+                                    });
+                                </script>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
             
 
@@ -457,4 +529,30 @@ include ('../app/controllers/clientes/listado_de_clientes.php');
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     });
 </script>
+
+                                        <!-- modal para visualizar el formulario para agregar clientes-->
+                                       <div class="modal fade" id="modal-agregar_cliente">
+                                           <div class="modal-dialog modal-sm">
+                                               <div class="modal-content">
+                                                   <div class="modal-header" style="background-color: #74b61dff;color: white">
+                                                       <h4 class="modal-title">Nuevo cliente</h4>
+                                                       <div style="width: 10px;"></div>
+                                                       
+
+                                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                           <span aria-hidden="true">&times;</span>
+                                                       </button>
+                                                   </div>
+                                                   <div class="modal-body">
+                                                       <div class="table table-responsive">
+                                                            <form action="">
+                                                                
+                                                            </form>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                               <!-- /.modal-content -->
+                                           </div>
+                                           <!-- /.modal-dialog -->
+                                       </div>
 

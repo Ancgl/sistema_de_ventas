@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-07-2025 a las 05:49:58
+-- Tiempo de generación: 19-07-2025 a las 00:24:23
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -50,9 +50,10 @@ CREATE TABLE `tb_almacen` (
 --
 
 INSERT INTO `tb_almacen` (`id_producto`, `codigo`, `nombre`, `descripcion`, `stock`, `stock_minimo`, `stock_maximo`, `precio_compra`, `precio_venta`, `fecha_ingreso`, `imagen`, `id_usuario`, `id_categoria`, `fyh_creacion`, `fyh_actualizacion`) VALUES
-(1, 'P-00001', 'COCA QUINA', 'de 2 litros', 15, 20, 500, '9', '12', '2023-02-12', '2023-02-12-06-26-25__6020052-1000x1000.jpg', 1, 1, '2023-02-12 18:26:25', '0000-00-00 00:00:00'),
+(1, 'P-00001', 'COCA QUINA', 'de 2 litros', 15, 20, 500, '9', '12.50', '2023-02-12', '2023-02-12-06-26-25__6020052-1000x1000.jpg', 1, 1, '2023-02-12 18:26:25', '0000-00-00 00:00:00'),
 (2, 'P-00002', 'AUDIFONOS', 'Con cargado incorporado', 100, 10, 200, '80', '120', '2023-02-13', '2023-02-13-02-29-53__8810fb37cb2f03d30c7c467ec772b5ed6811e7e6.jpeg', 1, 11, '2023-02-13 14:29:53', '0000-00-00 00:00:00'),
-(3, 'P-00003', 'VINO TINTO', 'VINO TINTO BLANCO DE 300 ml', 120, 10, 200, '50', '80', '2023-02-13', '2023-02-13-02-35-15__vino.JPG', 1, 1, '2023-02-13 14:35:15', '0000-00-00 00:00:00');
+(3, 'P-00003', 'VINO TINTO', 'VINO TINTO BLANCO DE 300 ml', 120, 10, 200, '50', '80', '2023-02-13', '2023-02-13-02-35-15__vino.JPG', 1, 1, '2023-02-13 14:35:15', '0000-00-00 00:00:00'),
+(4, 'P-00004', 'PIQUEOS', 'Piqueos Picantes huff', 43, 10, 100, '2', '3', '2025-07-14', '2025-07-14-11-56-35__piqueos.jpg', 3, 3, '2025-07-14 11:56:35', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -62,12 +63,21 @@ INSERT INTO `tb_almacen` (`id_producto`, `codigo`, `nombre`, `descripcion`, `sto
 
 CREATE TABLE `tb_carrito` (
   `id_carrito` int(11) NOT NULL,
-  `id_venta` int(11) NOT NULL,
+  `nro_venta` int(11) NOT NULL,
   `id_producto` int(11) NOT NULL,
   `cantidad` int(11) NOT NULL,
   `fyh_creacion` datetime NOT NULL,
   `fyh_actualizacion` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tb_carrito`
+--
+
+INSERT INTO `tb_carrito` (`id_carrito`, `nro_venta`, `id_producto`, `cantidad`, `fyh_creacion`, `fyh_actualizacion`) VALUES
+(4, 1, 1, 1, '2025-07-12 13:21:43', '0000-00-00 00:00:00'),
+(5, 1, 3, 2, '2025-07-12 13:23:29', '0000-00-00 00:00:00'),
+(8, 2, 4, 3, '2025-07-18 12:18:45', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -87,15 +97,13 @@ CREATE TABLE `tb_categorias` (
 --
 
 INSERT INTO `tb_categorias` (`id_categoria`, `nombre_categoria`, `fyh_creacion`, `fyh_actualizacion`) VALUES
-(1, 'LIQUIDOS', '2023-01-24 22:25:10', '2023-01-24 22:25:10'),
-(2, 'FRUTAS', '2023-01-25 14:39:50', '2023-01-25 15:09:07'),
-(3, 'COMIDAS', '2023-01-25 14:40:27', '0000-00-00 00:00:00'),
-(4, 'ELECTRODOMESTICOS', '2023-01-25 14:41:14', '0000-00-00 00:00:00'),
-(5, 'VERDURAS', '2023-01-25 14:43:06', '0000-00-00 00:00:00'),
-(6, 'MEDICAMENTOS Y COMIDAS', '2023-01-25 14:44:51', '2023-01-25 15:09:22'),
-(8, 'algo2', '2023-01-25 17:49:21', '2023-01-25 17:54:25'),
-(9, 'algo3', '2023-01-25 17:54:06', '2023-01-25 17:57:31'),
-(11, 'ELECTRONICOS', '2023-01-29 23:01:42', '0000-00-00 00:00:00');
+(1, 'Bebidas', '2023-01-24 22:25:10', '2025-07-15 17:30:03'),
+(2, 'Lacteos', '2023-01-25 14:39:50', '2025-07-15 17:29:54'),
+(3, 'Comidas', '2023-01-25 14:40:27', '2025-07-15 17:30:33'),
+(4, 'Dulces y Snacks', '2023-01-25 14:41:14', '2025-07-15 17:29:22'),
+(5, 'Limpieza y Aseo Personal', '2023-01-25 14:43:06', '2025-07-15 17:30:20'),
+(6, 'Bebidas Alcohólicas', '2023-01-25 14:44:51', '2025-07-15 17:34:04'),
+(11, 'Panadería y Pastelería', '2023-01-29 23:01:42', '2025-07-15 17:34:34');
 
 -- --------------------------------------------------------
 
@@ -112,6 +120,15 @@ CREATE TABLE `tb_clientes` (
   `fyh_creacion` datetime NOT NULL,
   `fyh_actualizacion` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tb_clientes`
+--
+
+INSERT INTO `tb_clientes` (`id_cliente`, `nombre_cliente`, `nit_ci_cliente`, `celular_cliente`, `email_cliente`, `fyh_creacion`, `fyh_actualizacion`) VALUES
+(1, 'luis paredes', '75861496', '935789126', 'luisparedes@gmail.com', '2025-07-14 20:54:43', '2025-07-14 20:54:43'),
+(2, 'Jasmin Campos', '85467524', '987565412', 'jasmincampos@gmail.com', '2025-07-14 20:54:43', '2025-07-14 20:54:43'),
+(3, 'alonso rios', '85479631', '987685125', 'alonsorios@gmail.com', '2025-07-15 16:37:34', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -169,7 +186,8 @@ CREATE TABLE `tb_proveedores` (
 
 INSERT INTO `tb_proveedores` (`id_proveedor`, `nombre_proveedor`, `celular`, `telefono`, `empresa`, `email`, `direccion`, `fyh_creacion`, `fyh_actualizacion`) VALUES
 (10, 'Jose Quente', '75657007', '27736632', 'CASCADA', 'hilariweb@gmail.com', 'Av. del Maestro S/N', '2023-02-12 18:27:10', '0000-00-00 00:00:00'),
-(11, 'Maria Quispe Montes', '74664754', '28837773', 'COPELMEX', 'maria@gmail.com', 'av. panamerica nro 540', '2023-02-14 16:23:39', '0000-00-00 00:00:00');
+(11, 'Maria Quispe Montes', '74664754', '28837773', 'COPELMEX', 'maria@gmail.com', 'av. panamerica nro 540', '2023-02-14 16:23:39', '0000-00-00 00:00:00'),
+(12, 'Jorge condor', '987546254', '987546254', 'A&M GLOBAL SOLUTIONS COMPANY S.A.C.', 'jorgecondor@gmail.com', 'Av. El Polo Mz. F lote 17 Urb. El Club Santa María de Huachipa Lima15', '2025-07-09 11:39:25', '2025-07-09 11:40:14');
 
 -- --------------------------------------------------------
 
@@ -216,7 +234,7 @@ CREATE TABLE `tb_usuarios` (
 --
 
 INSERT INTO `tb_usuarios` (`id_usuario`, `nombres`, `email`, `password_user`, `token`, `id_rol`, `fyh_creacion`, `fyh_actualizacion`) VALUES
-(1, 'Freddy Hilari', 'hilariweb@gmail.com', '$2y$10$VIDXuo4wKCt/x5BHkwHZAOw9lJNirjyLbBHPa9AA4/xgOW.91y/DG', '', 1, '2023-01-24 15:16:01', '2023-01-24 15:16:01'),
+(1, 'Oscar Valdes', 'oscarvaldes@gmail.com', '$2y$10$VIDXuo4wKCt/x5BHkwHZAOw9lJNirjyLbBHPa9AA4/xgOW.91y/DG', '', 1, '2023-01-24 15:16:01', '2025-07-15 17:36:51'),
 (3, 'Jhon Ancgl', 'jhonanco@gmail.com', '$2y$10$RVxD4fWMzuFTq9YVngkQneXL1wPGGE4QmWV4OI6xrZHv2VIAyiWBK', '', 1, '2025-06-02 11:40:14', '2025-06-02 11:43:06');
 
 -- --------------------------------------------------------
@@ -227,6 +245,7 @@ INSERT INTO `tb_usuarios` (`id_usuario`, `nombres`, `email`, `password_user`, `t
 
 CREATE TABLE `tb_ventas` (
   `id_venta` int(11) NOT NULL,
+  `nro_venta` int(11) NOT NULL,
   `id_cliente` int(11) NOT NULL,
   `total_pagado` int(11) NOT NULL,
   `fyh_creacion` datetime NOT NULL,
@@ -250,7 +269,7 @@ ALTER TABLE `tb_almacen`
 --
 ALTER TABLE `tb_carrito`
   ADD PRIMARY KEY (`id_carrito`),
-  ADD KEY `id_venta` (`id_venta`),
+  ADD KEY `id_venta` (`nro_venta`),
   ADD KEY `id_producto` (`id_producto`);
 
 --
@@ -299,7 +318,8 @@ ALTER TABLE `tb_usuarios`
 ALTER TABLE `tb_ventas`
   ADD PRIMARY KEY (`id_venta`),
   ADD KEY `id_cliente` (`id_cliente`),
-  ADD KEY `id_cliente_2` (`id_cliente`);
+  ADD KEY `id_cliente_2` (`id_cliente`),
+  ADD KEY `nro_venta` (`nro_venta`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -309,25 +329,25 @@ ALTER TABLE `tb_ventas`
 -- AUTO_INCREMENT de la tabla `tb_almacen`
 --
 ALTER TABLE `tb_almacen`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_carrito`
 --
 ALTER TABLE `tb_carrito`
-  MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_categorias`
 --
 ALTER TABLE `tb_categorias`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_clientes`
 --
 ALTER TABLE `tb_clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_compras`
@@ -339,7 +359,7 @@ ALTER TABLE `tb_compras`
 -- AUTO_INCREMENT de la tabla `tb_proveedores`
 --
 ALTER TABLE `tb_proveedores`
-  MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_roles`
@@ -357,7 +377,7 @@ ALTER TABLE `tb_usuarios`
 -- AUTO_INCREMENT de la tabla `tb_ventas`
 --
 ALTER TABLE `tb_ventas`
-  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
@@ -374,8 +394,7 @@ ALTER TABLE `tb_almacen`
 -- Filtros para la tabla `tb_carrito`
 --
 ALTER TABLE `tb_carrito`
-  ADD CONSTRAINT `tb_carrito_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `tb_almacen` (`id_producto`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `tb_carrito_ibfk_2` FOREIGN KEY (`id_venta`) REFERENCES `tb_ventas` (`id_venta`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `tb_carrito_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `tb_almacen` (`id_producto`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `tb_compras`
@@ -395,7 +414,8 @@ ALTER TABLE `tb_usuarios`
 -- Filtros para la tabla `tb_ventas`
 --
 ALTER TABLE `tb_ventas`
-  ADD CONSTRAINT `tb_ventas_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `tb_clientes` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `tb_ventas_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `tb_clientes` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `tb_ventas_ibfk_2` FOREIGN KEY (`nro_venta`) REFERENCES `tb_carrito` (`nro_venta`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
