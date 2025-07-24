@@ -448,6 +448,11 @@ include ('../app/controllers/clientes/listado_de_clientes.php');
                                         
                                         if (id_cliente=="") {
                                             alert("Debe de completar los datos del cliente");
+                                        }else {
+                                             var url = "../app/controllers/ventas/registro_de_ventas.php";
+                                                $.get(url,{nro_venta:nro_venta, id_producto:id_producto, cantidad: cantidad},function (datos) {
+                                                    $('#respuesta_carrito').html(datos);
+                                            });
                                         }
                                     });
                                 </script>
@@ -545,8 +550,29 @@ include ('../app/controllers/clientes/listado_de_clientes.php');
                                                    </div>
                                                    <div class="modal-body">
                                                        <div class="table table-responsive">
-                                                            <form action="">
-                                                                
+                                                            <form action="../app/controllers/clientes/guardar_clientes.php" method="post">
+                                                                <hr>
+                                                                <div class="form-group">
+                                                                    <label for="">Nombre </label>
+                                                                    <input type="text" name="nombre_cliente" class="form-control">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="">DNI </label>
+                                                                    <input type="text" name="nit_ci_cliente" class="form-control">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="">Telefono</label>
+                                                                    <input type="text" name="celular_cliente" class="form-control">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="">Correo </label>
+                                                                    <input type="email" name="email_cliente" class="form-control">
+                                                                </div>
+                                                                <hr>
+                                                                <hr>
+                                                                <div class="form-group">
+                                                                    <button type="submit" class="btn btn-warning btn-block">Guardar Cliente</button>
+                                                                </div>
                                                             </form>
                                                        </div>
                                                    </div>
