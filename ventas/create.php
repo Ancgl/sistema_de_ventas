@@ -7,6 +7,7 @@ include ('../app/controllers/ventas/listado_de_ventas.php');
 include ('../app/controllers/almacen/listado_de_productos.php');
 include ('../app/controllers/clientes/listado_de_clientes.php');
 
+
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -440,6 +441,7 @@ include ('../app/controllers/clientes/listado_de_clientes.php');
                             <hr>
                             <div class="form-group">
                                 <button id="btn_guardar_venta" class="btn btn-primary btn-block">Guardar Venta</button>
+                                <div id="respuesta_registro_venta"></div>
                                 <script>
                                     $('#btn_guardar_venta').click(function () {
                                         var nro_venta = '<?php echo $contador_de_ventas + 1; ?>';
@@ -449,9 +451,15 @@ include ('../app/controllers/clientes/listado_de_clientes.php');
                                         if (id_cliente=="") {
                                             alert("Debe de completar los datos del cliente");
                                         }else {
-                                             var url = "../app/controllers/ventas/registro_de_ventas.php";
-                                                $.get(url,{nro_venta:nro_venta, id_producto:id_producto, cantidad: cantidad},function (datos) {
-                                                    $('#respuesta_carrito').html(datos);
+                                             guardar_venta();
+                                        }
+
+                                        //----function
+
+                                        function guardar_venta() {
+                                            var url = "../app/controllers/ventas/registro_de_ventas.php";
+                                                $.get(url,{nro_venta:nro_venta, id_cliente:id_cliente, total_a_cancelar: total_a_cancelar},function (datos) {
+                                                    $('#respuesta_registro_venta').html(datos);
                                             });
                                         }
                                     });
