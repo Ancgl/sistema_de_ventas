@@ -52,10 +52,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
                 <!-- Falta colocar un Swet Alert Aqui Para cerrar Secion -->
                 <a href="<?php echo $URL;?>/app/controllers/login/cerrar_sesion.php" 
-                                            class="nav-link" 
-                        onclick="return confirm('¿Estás seguro de que deseas cerrar sesión?');">
-                    <i class="fas fa-sign-out-alt"></i>
+                                            class="nav-link" style="background-color: rgb(90, 95, 99); color: white; margin-left: 10px; border-radius: 2px; padding: 6px 15px; ">
+                    <i class="fas fa-sign-out-alt"> Cerrar Sesion</i>
                 </a>
+                
                 <!-- Falta colocar un Swet Alert Aqui Para cerrar Secion -->
             </li>
         </ul>
@@ -95,8 +95,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                     <li class="nav-item ">
-                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white;">
-                            <i class="nav-icon fas fa-users"></i>
+                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white; border-radius: 2px;">
+                            <i class="nav-icon fas fa-user"></i>
                             <p>
                                 Usuarios
                                 <i class="right fas fa-angle-left"></i>
@@ -125,7 +125,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                     <li class="nav-item ">
-                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white;">
+                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white; border-radius: 2px;">
                             <i class="nav-icon fas fa-address-card"></i>
                             <p>
                                 Roles
@@ -153,7 +153,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                     <li class="nav-item ">
-                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white;">
+                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white; border-radius: 2px;">
                             <i class="nav-icon fas fa-tags"></i>
                             <p>
                                 Categorías
@@ -176,7 +176,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                     <li class="nav-item ">
-                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white;">
+                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white; border-radius: 2px;">
                             <i class="nav-icon fas fa-list"></i>
                             <p>
                                 Almacen
@@ -203,7 +203,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                     <li class="nav-item ">
-                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white;">
+                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white; border-radius: 2px;">
                             <i class="nav-icon fas fa-cart-plus"></i>
                             <p>
                                 Compras
@@ -230,7 +230,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                     <li class="nav-item ">
-                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white;">
+                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white; border-radius: 2px;">
                             <i class="nav-icon fas fa-car"></i>
                             <p>
                                 Proveedores
@@ -249,8 +249,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 
+
                     <li class="nav-item ">
-                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white;">
+                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white; border-radius: 2px;">
                             <i class="nav-icon fas fa-shopping-basket"></i>
                             <p>
                                 Ventas
@@ -276,15 +277,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 
-
-                    <li class="nav-item">
-                        <a href="<?php echo $URL;?>/app/controllers/login/cerrar_sesion.php" class="nav-link" style="background-color: #ca0a0b">
-                            <i class="fas fa-sign-out-alt"></i>
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white; border-radius: 2px;">
+                            <i class="nav-icon fas fa-users"></i>
                             <p>
-                                Cerrar Sesión
+                                Clientes
+                                <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
-                    </li>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?php echo $URL;?>/clientes" class="nav-link">
+                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem;"></i>
+                                    <p>Listado de Clientes</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo $URL;?>/clientes/create.php" class="nav-link">
+                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem;"></i>
+                                    <p>Agregar Cliente</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li> 
+                    
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

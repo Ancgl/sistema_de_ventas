@@ -95,14 +95,13 @@ include ('../app/controllers/almacen/listado_de_productos.php');
                                            <td><?php echo $productos_dato['precio_venta'];?></td>
                                            <td><?php echo $productos_dato['fecha_ingreso'];?></td>
                                            <td><?php echo $productos_dato['email'];?></td>
+                                           <!-- botones para los productos -->
                                            <td>
                                                <center>
-                                                   <div class="btn-group">
-                                                       <a href="show.php?id=<?php echo $id_producto; ?>" type="button" class="btn btn-info btn-sm"><i class="fa fa-eye"></i> Ver</a>
-                                                       <a href="update.php?id=<?php echo $id_producto; ?>" type="button" class="btn btn-success btn-sm"><i class="fa fa-pencil-alt"></i> Editar</a>
-                                                       <a href="delete.php?id=<?php echo $id_producto; ?>" type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Borrar</a>
-                                                   </div>
-                                               </center>
+                                                    <a href="show.php?id=<?php echo $id_producto;?>" class="btn btn-info"><i class="fa fa-eye"></i> </a>
+                                                    <a href="update.php?id=<?php echo $id_producto;?>" class="btn btn-success"><i class="fa fa-pencil-alt"></i> </a>
+                                                    <a href="delete.php?id=<?php echo $id_producto;?>" class="btn btn-danger"><i class="fa fa-trash"></i> </a>
+                                                </center>
                                            </td>
                                        </tr>
                                        <?php

@@ -344,4 +344,4 @@ include ('../app/controllers/compras/listado_de_compras.php');
     });
 </script>
 
-</script>
+

@@ -38,7 +38,7 @@ include ('app/controllers/compras/listado_de_compras.php');
 
 
                 <div class="col-lg-3 col-6">
-                    <div class="small-box bg-warning">
+                    <div class="small-box " style="background-color: #2d7d83ff; color: white; border-radius: 2px;" >
                         <div class="inner">
                             <?php
                             $contador_de_usuarios = 0;
@@ -55,14 +55,15 @@ include ('app/controllers/compras/listado_de_compras.php');
                             </div>
                         </a>
                         <a href="<?php echo $URL;?>/usuarios" class="small-box-footer">
-                            Más detalle <i class="fas fa-arrow-circle-right"></i>
+                            Más detalle <i class="fas fa-arrow-circle-right" >
+                            </i>
                         </a>
                     </div>
                 </div>
 
 
                 <div class="col-lg-3 col-6">
-                    <div class="small-box bg-info">
+                    <div class="small-box " style="background-color: #2d7d83ff; color: white;">
                         <div class="inner">
                             <?php
                             $contador_de_roles = 0;
@@ -86,7 +87,7 @@ include ('app/controllers/compras/listado_de_compras.php');
 
 
                 <div class="col-lg-3 col-6">
-                    <div class="small-box bg-success">
+                    <div class="small-box" style="background-color: #2d7d83ff; color: white;">
                         <div class="inner">
                             <?php
                             $contador_de_categorias = 0;
@@ -110,7 +111,7 @@ include ('app/controllers/compras/listado_de_compras.php');
 
 
                 <div class="col-lg-3 col-6">
-                    <div class="small-box bg-primary">
+                    <div class="small-box " style="background-color: #2d7d83ff; color: white;">
                         <div class="inner">
                             <?php
                             $contador_de_productos = 0;
@@ -137,7 +138,7 @@ include ('app/controllers/compras/listado_de_compras.php');
 
 
                 <div class="col-lg-3 col-6">
-                    <div class="small-box bg-dark">
+                    <div class="small-box " style="background-color: #2d7d83ff; color: white;">
                         <div class="inner">
                             <?php
                             $contador_de_proveedores = 0;
@@ -163,7 +164,7 @@ include ('app/controllers/compras/listado_de_compras.php');
 
 
                 <div class="col-lg-3 col-6">
-                    <div class="small-box bg-danger">
+                    <div class="small-box " style="background-color: #2d7d83ff; color: white;">
                         <div class="inner">
                             <?php
                             $contador_de_compras = 0;
@@ -188,7 +189,7 @@ include ('app/controllers/compras/listado_de_compras.php');
 
 
                 <div class="col-lg-3 col-6">
-                    <div class="small-box bg-blue">
+                    <div class="small-box " style="background-color: #2d7d83ff; color: white;">
                         <div class="inner">
                             <?php
                             $contador_de_compras = 0;
