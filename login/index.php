@@ -16,8 +16,37 @@
 
     <!-- Libreria Sweetallert2-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        body.login-page {
+            background: url('../public/images/fon.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(24, 243, 42, 0.3); /* Cambia el color y la opacidad aquí */
+        z-index: 1;
+        }
+        .login-box {
+            position: relative;
+            z-index: 2;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.8); /* Fondo blanco semitransparente */
+            border: none; /* Opcional: sin borde */
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.9); /* Opcional: sombra suave */
+        }
+
+    </style>
+
 </head>
 <body class="hold-transition login-page">
+<div class="overlay"></div>
 <div class="login-box">
     <!-- /.login-logo -->
 
@@ -44,12 +73,13 @@
             alt="" width="300px">
     </center>
     <br>
-    <div class="card card-outline card-primary">
+    <div class="card card-outline ">
         <div class="card-header text-center">
-            <a href="../public/templeates/AdminLTE-3.2.0/index2.html" class="h1"><b>Sistema de Ventas</b></a>
+            <a href="../public/templeates/AdminLTE-3.2.0/index2.html" class="h1" style="color: #000;"><h2>Bienvenido al Sistema</h2></a>
+            <a href="" style="color: #000;">Ingrese sus Datos Correctamente</a>
         </div>
         <div class="card-body">
-            <p class="login-box-msg">Ingrese sus datos</p>
+            
 
             <form action="../app/controllers/login/ingreso.php" method="post">
                 <div class="input-group mb-3">
@@ -72,11 +102,13 @@
                 <div class="row">
                     <!-- /.col -->
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                        <button type="submit" class="btn btn-primary btn-block">Iniciar Sesion</button>
                     </div>
                     <!-- /.col -->
                 </div>
             </form>
+            <hr>
+            <a href="" style="color: #000;">Ancgl - 2025</a>
 
         </div>
         <!-- /.card-body -->

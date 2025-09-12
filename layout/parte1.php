@@ -292,12 +292,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <p>Listado de Clientes</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="<?php echo $URL;?>/clientes/create.php" class="nav-link">
-                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem;"></i>
-                                    <p>Agregar Cliente</p>
-                                </a>
-                            </li>
+                            
                         </ul>
                     </li> 
                     

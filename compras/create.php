@@ -10,6 +10,7 @@ include ('../app/controllers/compras/listado_de_compras.php');
 
 ?>
 
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -33,9 +34,9 @@ include ('../app/controllers/compras/listado_de_compras.php');
                <div class="col-md-9">
                    <div class="row">
                        <div class="col-md-12">
-                           <div class="card card-primary">
+                           <div class="card card-primary" >
                                <div class="card-header">
-                                   <h3 class="card-title">Llene los datos con cuidado</h3>
+                                   <h3 class="card-title" style=" color: #000000ff;">Llene los datos con cuidado</h3>
                                    <div class="card-tools">
                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                                        </button>
@@ -45,11 +46,11 @@ include ('../app/controllers/compras/listado_de_compras.php');
 
                                <div class="card-body" style="display: block;">
                                    <div style="display: flex">
-                                       <h5>Datos del producto </h5>
+                                       
                                        <div style="width: 20px"></div>
                                        <button type="button" class="btn btn-primary" data-toggle="modal"
-                                               data-target="#modal-buscar_producto">
-                                           <i class="fa fa-search"></i>
+                                               data-target="#modal-buscar_producto" style="border-radius: 2px; color: #000000ff;">
+                                           <i class="fa fa-binoculars"></i>
                                            Buscar producto
                                        </button>
                                        <!-- modal para visualizar datos de los proveedor -->
@@ -266,11 +267,11 @@ include ('../app/controllers/compras/listado_de_compras.php');
 
                                    <hr>
                                    <div style="display: flex">
-                                       <h5>Datos del proveedor </h5>
+                                       
                                        <div style="width: 20px"></div>
                                        <button type="button" class="btn btn-primary" data-toggle="modal"
-                                               data-target="#modal-buscar_proveedor">
-                                           <i class="fa fa-search"></i>
+                                               data-target="#modal-buscar_proveedor" style="border-radius: 2px; color: #000000ff;">
+                                           <i class="fa fa-binoculars"></i>
                                            Buscar proveedor
                                        </button>
                                        <!-- modal para visualizar datos de los proveedor -->
@@ -340,12 +341,7 @@ include ('../app/controllers/compras/listado_de_compras.php');
                                                                            </script>
                                                                        </td>
                                                                        <td><?php echo $nombre_proveedor;?></td>
-                                                                       <td>
-                                                                           <a href="https://wa.me/591<?php echo $proveedores_dato['celular'];?>" target="_blank" class="btn btn-success">
-                                                                               <i class="fa fa-phone"></i>
-                                                                               <?php echo $proveedores_dato['celular'];?>
-                                                                           </a>
-                                                                       </td>
+                                                                       <td><?php echo $proveedores_dato['celular'];?></td>
                                                                        <td><?php echo $proveedores_dato['telefono'];?></td>
                                                                        <td><?php echo $proveedores_dato['empresa'];?></td>
                                                                        <td><?php echo $proveedores_dato['email'];?></td>
@@ -515,7 +511,7 @@ include ('../app/controllers/compras/listado_de_compras.php');
 
                                    <div class="col-md-12">
                                        <div class="form-group">
-                                           <button class="btn btn-primary btn-block" id="btn_guardar_compra">Guardar compra</button>
+                                           <button class="btn btn-primary btn-block" id="btn_guardar_compra" style="border-radius: 2px; color: #000000ff;"> <i class="fa fa-binoculars"></i> Generar compra</button>
                                        </div>
                                    </div>
                                    <script>

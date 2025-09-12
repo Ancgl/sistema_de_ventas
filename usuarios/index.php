@@ -64,12 +64,19 @@ include ('../app/controllers/usuarios/listado_de_usuarios.php');
                                         <td><center><?php echo $usuarios_dato['rol'];?></center></td>
                                         <td>
                                             <center>
-                                                <div class="btn-group">
-                                                    <a href="show.php?id=<?php echo $id_usuario; ?>" type="button" class="btn btn-info"><i class="fa fa-eye"></i> Ver</a>
-                                                    <a href="update.php?id=<?php echo $id_usuario; ?>" type="button" class="btn btn-success"><i class="fa fa-pencil-alt"></i> Editar</a>
-                                                    <a href="delete.php?id=<?php echo $id_usuario; ?>" type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Borrar</a>
-                                                </div>
-                                            </center>
+                                                <a href="show.php?id=<?php echo $id_usuario; ?>" class="btn" style="background-color: #17a2b8;">
+                                                    <i class="fa fa-binoculars"></i>
+                                                </a>
+
+                                                <a href="update.php?id=<?php echo $id_usuario; ?>" class="btn" style="background-color: #ffae00ff;">
+                                                    <i class="fa fa-pencil-alt"></i>
+                                                </a>
+
+                                                <a href="delete.php?id=<?php echo $id_usuario; ?>" class="btn" style="background-color: #ff1100ff;" >
+                                                    <i class="fa fa-trash-alt"></i>
+                                                </a>
+                                            </center>                                          
+
                                         </td>
                                     </tr>
                                     <?php

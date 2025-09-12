@@ -69,7 +69,7 @@ include ('../app/controllers/ventas/listado_de_ventas.php');
                                                 <center>
                                                     <!-- Botón -->
                                                     <button type="button" class="btn btn-primary" 
-                                                            data-toggle="modal" data-target="#Modal_productos<?php echo $id_venta;?>" >
+                                                            data-toggle="modal" data-target="#Modal_productos<?php echo $id_venta;?>" style="border-radius: 2px; color: #000000ff;">
                                                         <i class="fa fa-shopping-basket"></i> Productos
                                                     </button>
 
@@ -78,8 +78,8 @@ include ('../app/controllers/ventas/listado_de_ventas.php');
                                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog modal-lg" role="document">
                                                             <div class="modal-content">
-                                                            <div class="modal-header" style="background-color: rgba(12, 66, 241, 0.27)">
-                                                                <h5 class="modal-title" id="exampleModalLabel">Productos de la venta <?php echo $ventas_dato ['nro_venta'] ?></h5>
+                                                            <div class="modal-header" style="background-color: rgba(20, 114, 131, 0.73)">
+                                                                <h5 class="modal-title" id="exampleModalLabel"> Productos de la Venta <?php echo $ventas_dato ['nro_venta'] ?></h5>
                                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
                                                                     <span aria-hidden="true">&times;</span>
                                                                 </button>
@@ -182,79 +182,26 @@ include ('../app/controllers/ventas/listado_de_ventas.php');
                                             <!-- Modal de Clientes -->
                                             <td>
                                                 <center>
-                                                    <!-- Botón -->
-                                                    <button type="button" class="btn btn-primary" 
-                                                            data-toggle="modal" data-target="#Modal_clientes<?php echo $id_venta;?>" >
-                                                        <i class="fa fa-users"></i> <?php echo $ventas_dato['nombre_cliente'];?>
-                                                    </button>
-
-                                                    <!-- Modal -->
-                                                        <!-- modal para agregar clientes-->
-                                                        <div class="modal fade" id="Modal_clientes<?php echo $id_venta;?>">
-                                                            <div class="modal-dialog modal-sm">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header" style="background-color: #74b61dff;color: white">
-                                                                        <h4 class="modal-title"> cliente </h4>
-                                                                        <div style="width: 10px;"></div>
-                                                                        
-
-                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                            <span aria-hidden="true">&times;</span>
-                                                                        </button>
-                                                                    </div>
-                                                                    <?php
-                                                                    $sql_clientes = "SELECT * FROM tb_clientes where id_cliente = '$id_cliente' ";
-                                                                    $query_clientes = $pdo->prepare($sql_clientes);
-                                                                    $query_clientes->execute();
-                                                                    $clientes_datos = $query_clientes->fetchAll(PDO::FETCH_ASSOC);
-                                                                    foreach ($clientes_datos as $clientes_dato) {
-                                                                        
-                                                                        $nombre_cliente = $clientes_dato['nombre_cliente'];
-                                                                        $nit_ci_cliente = $clientes_dato['nit_ci_cliente'];
-                                                                        $celular_cliente = $clientes_dato['celular_cliente'];
-                                                                        $email_cliente = $clientes_dato['email_cliente'];
-                                                                    }
-                                                                    ?>
-
-                                                                    <div class="modal-body">
-                                                                        <div class="table table-responsive">
-                                                                                
-                                                                                    <hr>
-                                                                                    <div class="form-group">
-                                                                                        <label for="">Nombre </label>
-                                                                                        <input type="text" value="<?php echo $nombre_cliente;?>" name="nombre_cliente" class="form-control"disabled>
-                                                                                    </div>
-                                                                                    <div class="form-group">
-                                                                                        <label for="">DNI </label>
-                                                                                        <input type="text" value="<?php echo $nit_ci_cliente;?>" name="nit_ci_cliente" class="form-control"disabled>
-                                                                                    </div>
-                                                                                    <div class="form-group">
-                                                                                        <label for="">Telefono</label>
-                                                                                        <input type="text" value="<?php echo $celular_cliente;?>" name="celular_cliente" class="form-control"disabled>
-                                                                                    </div>
-                                                                                    <div class="form-group">
-                                                                                        <label for="">Correo </label>
-                                                                                        <input type="email" value="<?php echo $email_cliente;?>" name="email_cliente" class="form-control"disabled>
-                                                                                    </div>
-                                                                                    <hr>
-                                                                                    
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- /.modal-content -->
-                                                            </div>
-                                                            <!-- /.modal-dialog -->
-                                                        </div>
+                                                    <?php echo $ventas_dato['nombre_cliente']; ?>
                                                 </center>
+                                            </td> 
+                                            <td>
+                                                <center><?php echo "s/ ".$ventas_dato ['total_pagado'] ?></center>
                                             </td>
                                             <td>
-                                                <center><button class="btn btn-primary" ><?php echo "s/ ".$ventas_dato ['total_pagado'] ?></button></center>
-                                            </td>
-                                            <td>
+                                                 
                                                 <center>
-                                                    <a href="show.php?id_venta=<?php echo $id_venta;?>" class="btn btn-info"><i class="fa fa-eye"></i> Ver</a>
-                                                    <a href="delete.php?id_venta=<?php echo $id_venta;?>&nro_venta=<?php echo $nro_venta;?>" class="btn btn-danger"><i class="fa fa-trash"></i> Borrar</a>
-                                                    <a href="factura.php?id_venta=<?php echo $id_venta;?>&nro_venta=<?php echo $nro_venta;?>" class="btn btn-success"><i class="fa fa-print"></i> Imprimir</a>
+                                                    <a href="show.php?id_venta=<?php echo $id_venta;?>" class="btn" style="background-color: #17a2b8; color: #000000ff;">
+                                                        <i class="fa fa-binoculars"></i>
+                                                    </a>
+
+                                                    <a href="delete.php?id_venta=<?php echo $id_venta;?>&nro_venta=<?php echo $nro_venta;?>" class="btn" style="background-color: #ff0000ff; color: #000000ff;">
+                                                        <i class="fa fa-trash-alt"></i>
+                                                    </a>
+
+                                                    <a href="../app/controllers/ventas/imprimir_venta.php?id_venta=<?php echo $id_venta_get; ?>" target="_blank" class="btn" style="background-color: #0db10dff; color: #000000ff;">
+                                                        <i class="fa fa-file-pdf"></i>
+                                                    </a>
                                                 </center>
                                             </td>
                                         </tr>

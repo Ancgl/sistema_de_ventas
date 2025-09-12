@@ -235,8 +235,6 @@ include ('../app/controllers/clientes/cargar_cliente.php');
                                                 var id_producto = $(c).val();
 
                                                 var stock_calculado = parseFloat(parseInt(stock_de_inventario) + parseInt(cantidad_carrito) );
-
-                                                //alert (id_producto + '-' + stock_de_inventario + '-' + cantidad_carrito + '-' + stock_calculado);
                                                
                                                 var url2 = "../app/controllers/ventas/actualizar_stock.php";
                                                 $.get(url2,{id_producto:id_producto, stock_calculado:stock_calculado},function (datos) {

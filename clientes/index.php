@@ -63,8 +63,10 @@ include ('../app/controllers/clientes/listado_de_clientes.php');
                                         <td>
                                             
                                             <center>
-                                                <a href="update.php?id_cliente=<?php echo $id_cliente; ?>" class="btn" style="background-color: #ffae00ff; color: #fff; border: none;"><i class="fa fa-pencil-alt"></i> </a>
-                                                <a href="delete.php?id_cliente=<?php echo $id_cliente;?>" class="btn bnt-circle" style="background-color: #f80303ff; color: #f3f1f1ff; border: none;"><i class="fa fa-trash"></i> </a>
+                                                <a href="update.php?id_cliente=<?php echo $id_cliente; ?>" class="btn" style="background-color: #ffae00ff;"><i class="fa fa-pencil-alt"></i> </a>
+                                                <a href="../app/controllers/clientes/delete_cliente.php?id_cliente=<?php echo $id_cliente;?>" class="btn" style="background-color: #ff1100ff;">
+                                                    <i class="fa fa-trash-alt"></i>
+                                                </a>
                                             </center>
                                            
 

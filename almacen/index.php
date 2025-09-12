@@ -98,10 +98,19 @@ include ('../app/controllers/almacen/listado_de_productos.php');
                                            <!-- botones para los productos -->
                                            <td>
                                                <center>
-                                                    <a href="show.php?id=<?php echo $id_producto;?>" class="btn btn-info"><i class="fa fa-eye"></i> </a>
-                                                    <a href="update.php?id=<?php echo $id_producto;?>" class="btn btn-success"><i class="fa fa-pencil-alt"></i> </a>
-                                                    <a href="delete.php?id=<?php echo $id_producto;?>" class="btn btn-danger"><i class="fa fa-trash"></i> </a>
+                                                    <a href="show.php?id=<?php echo $id_producto; ?>" class="btn" style="background-color: #17a2b8; color: #000000ff;">
+                                                        <i class="fa fa-binoculars"></i>
+                                                    </a>
+
+                                                    <a href="update.php?id=<?php echo $id_producto; ?>" class="btn" style="background-color: #ffae00ff; color: #000000ff;">
+                                                        <i class="fa fa-pencil-alt"></i>
+                                                    </a>
+
+                                                    <a href="delete.php?id=<?php echo $id_producto; ?>" class="btn" style="background-color: #ff1100ff; color: #000000ff;">
+                                                        <i class="fa fa-trash-alt"></i>
+                                                    </a>
                                                 </center>
+
                                            </td>
                                        </tr>
                                        <?php

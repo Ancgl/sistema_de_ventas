@@ -18,8 +18,8 @@ include ('../app/controllers/proveedores/listado_de_proveedores.php');
             <div class="row mb-2">
                 <div class="col-sm-12">
                     <h1 class="m-0">Listado de Proveedores
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-create">
-                            <i class="fa fa-plus"></i> Agregar Nuevo
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-create" style="border-radius: 2px; color: #000000ff;">
+                            <i class="fa fa-pen"></i> Registrar nuevo proveedor
                         </button>
                     </h1>
                 </div><!-- /.col -->
@@ -80,10 +80,12 @@ include ('../app/controllers/proveedores/listado_de_proveedores.php');
                                         <td><?php echo $proveedores_dato['direccion'];?></td>
                                         <td>
                                                 <div class="btn-group">
-                                                    <button type="button" class="btn btn-success" data-toggle="modal"
-                                                            data-target="#modal-update<?php echo $id_proveedor;?>">
-                                                        <i class="fa fa-pencil-alt"></i> Editar
+                                                    <!-- Botón para abrir el modal -->
+                                                    <button type="button" class="btn" style="background-color: #ffae00ff; color: #000000ff;" 
+                                                            data-toggle="modal" data-target="#modal-update<?php echo $id_proveedor; ?>">
+                                                        <i class="fa fa-pencil-alt"></i>
                                                     </button>
+
                                                     <!-- modal para actualizar proveedor -->
                                                     <div class="modal fade" id="modal-update<?php echo $id_proveedor;?>">
                                                         <div class="modal-dialog">
@@ -196,10 +198,12 @@ include ('../app/controllers/proveedores/listado_de_proveedores.php');
 
 
                                             <div class="btn-group">
-                                                <button type="button" class="btn btn-danger" data-toggle="modal"
-                                                        data-target="#modal-delete<?php echo $id_proveedor;?>">
-                                                    <i class="fa fa-trash"></i> Borrar
+                                                <!-- Botón para abrir el modal de borrar -->
+                                                <button type="button" class="btn" style="background-color: #ff1100ff; color: #070707ff;" 
+                                                        data-toggle="modal" data-target="#modal-delete<?php echo $id_proveedor; ?>">
+                                                    <i class="fa fa-trash-alt"></i>
                                                 </button>
+
                                                 <!-- modal para borrar proveedore -->
                                                 <div class="modal fade" id="modal-delete<?php echo $id_proveedor;?>">
                                                     <div class="modal-dialog">
@@ -436,8 +440,8 @@ include ('../app/controllers/proveedores/listado_de_proveedores.php');
 
             </div>
             <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary" id="btn_create">Guardar proveedor</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 2px; color: #000000ff;"> Cancelar</button>
+                <button type="button" class="btn btn-primary" id="btn_create" style="border-radius: 2px; color: #000000ff;"> Guardar</button>
             </div>
             <div id="respuesta"></div>
         </div>
