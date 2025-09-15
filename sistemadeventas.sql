@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-09-2025 a las 00:56:30
+-- Tiempo de generación: 15-09-2025 a las 22:46:37
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -50,7 +50,7 @@ CREATE TABLE `tb_almacen` (
 --
 
 INSERT INTO `tb_almacen` (`id_producto`, `codigo`, `nombre`, `descripcion`, `stock`, `stock_minimo`, `stock_maximo`, `precio_compra`, `precio_venta`, `fecha_ingreso`, `imagen`, `id_usuario`, `id_categoria`, `fyh_creacion`, `fyh_actualizacion`) VALUES
-(1, 'P-00001', 'COCA QUINA', 'de 2 litros', 19, 20, 500, '9', '12.50', '2023-02-12', '2023-02-12-06-26-25__6020052-1000x1000.jpg', 1, 1, '2023-02-12 18:26:25', '0000-00-00 00:00:00'),
+(1, 'P-00001', 'COCA QUINA', 'de 2 litros', 34, 20, 150, '9', '12.50', '2023-02-12', '2023-02-12-06-26-25__6020052-1000x1000.jpg', 1, 1, '2023-02-12 18:26:25', '2025-09-06 13:18:13'),
 (2, 'P-00002', 'AUDIFONOS', 'Con cargado incorporado', 41, 10, 200, '80', '120', '2023-02-13', '2023-02-13-02-29-53__8810fb37cb2f03d30c7c467ec772b5ed6811e7e6.jpeg', 1, 11, '2023-02-13 14:29:53', '0000-00-00 00:00:00'),
 (3, 'P-00003', 'VINO TINTO', 'VINO TINTO BLANCO DE 300 ml', 34, 10, 200, '50', '80', '2023-02-13', '2023-02-13-02-35-15__vino.JPG', 1, 1, '2023-02-13 14:35:15', '0000-00-00 00:00:00'),
 (4, 'P-00004', 'PIQUEOS', 'Piqueos Picantes huff', 23, 10, 100, '2', '3', '2025-07-14', '2025-07-14-11-56-35__piqueos.jpg', 3, 3, '2025-07-14 11:56:35', '2025-09-04 17:48:46');
@@ -124,9 +124,10 @@ CREATE TABLE `tb_clientes` (
 --
 
 INSERT INTO `tb_clientes` (`id_cliente`, `nombre_cliente`, `nit_ci_cliente`, `celular_cliente`, `email_cliente`, `fyh_creacion`, `fyh_actualizacion`) VALUES
-(1, 'luis paredes', '75861496', '935789126', 'luisparedes@gmail.com', '2025-07-14 20:54:43', '2025-07-14 20:54:43'),
-(2, 'Jasmin Campos', '85467524', '987565412', 'jasmincampos@gmail.com', '2025-07-14 20:54:43', '2025-07-14 20:54:43'),
-(3, 'alonso rios', '85479631', '987685125', 'alonsorios@gmail.com', '2025-07-15 16:37:34', '0000-00-00 00:00:00');
+(1, 'Luis Paredes Actualizado', '75861555', '935789126', 'luisparedes@gmail.com', '2025-07-14 20:54:43', '2025-07-14 20:54:43'),
+(2, 'Jasmin Campos Guerrera', '85467524', '987565412', 'jasmincampos@gmail.com', '2025-07-14 20:54:43', '2025-07-14 20:54:43'),
+(3, 'Alonso Rios Chapoñan', '85479631', '987685125', 'alonsorios@gmail.com', '2025-07-15 16:37:34', '0000-00-00 00:00:00'),
+(4, 'Andrea Gomez Rivera', '54179600', '987688100', 'andreagomezr@gmail.com', '2025-09-06 12:16:27', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -153,7 +154,6 @@ CREATE TABLE `tb_compras` (
 --
 
 INSERT INTO `tb_compras` (`id_compra`, `id_producto`, `nro_compra`, `fecha_compra`, `id_proveedor`, `comprobante`, `id_usuario`, `precio_compra`, `cantidad`, `fyh_creacion`, `fyh_actualizacion`) VALUES
-(1, 1, 1, '2023-02-12', 10, 'FACTURA', 1, '200', 50, '2023-02-12 23:37:24', '2023-02-12 23:37:24'),
 (2, 3, 2, '2023-02-17', 10, 'FACTURA NRO 120', 1, '5000', 50, '2023-02-17 22:35:24', '0000-00-00 00:00:00'),
 (3, 1, 3, '2023-02-17', 10, 'NOTA DE VENTA NRO 523', 1, '250', 100, '2023-02-17 22:37:33', '0000-00-00 00:00:00'),
 (4, 3, 4, '2023-02-21', 10, 'FACTURA NRO 300', 1, '5000', 50, '2023-02-21 17:08:58', '0000-00-00 00:00:00'),
@@ -167,7 +167,8 @@ INSERT INTO `tb_compras` (`id_compra`, `id_producto`, `nro_compra`, `fecha_compr
 (13, 1, 12, '2025-09-04', 10, '0001000', 3, '9', 25, '2025-09-04 17:30:02', '0000-00-00 00:00:00'),
 (14, 3, 13, '2025-09-04', 12, '00051021', 3, '50', 34, '2025-09-04 17:33:18', '0000-00-00 00:00:00'),
 (15, 2, 14, '2025-09-04', 11, '00051021', 3, '80', 42, '2025-09-04 17:34:10', '0000-00-00 00:00:00'),
-(16, 4, 15, '2025-09-04', 11, '0001400', 3, '2', 26, '2025-09-04 17:49:31', '0000-00-00 00:00:00');
+(16, 4, 15, '2025-09-04', 11, '0001400', 3, '2', 26, '2025-09-04 17:49:31', '0000-00-00 00:00:00'),
+(17, 1, 15, '2025-09-06', 11, '0001400', 3, '9', 65, '2025-09-06 11:07:40', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -193,7 +194,7 @@ CREATE TABLE `tb_proveedores` (
 
 INSERT INTO `tb_proveedores` (`id_proveedor`, `nombre_proveedor`, `celular`, `telefono`, `empresa`, `email`, `direccion`, `fyh_creacion`, `fyh_actualizacion`) VALUES
 (10, 'Jose Quente', '75657007', '27736632', 'CASCADA', 'hilariweb@gmail.com', 'Av. del Maestro S/N', '2023-02-12 18:27:10', '0000-00-00 00:00:00'),
-(11, 'Maria Quispe Montes', '74664754', '28837773', 'COPELMEX', 'maria@gmail.com', 'av. panamerica nro 540', '2023-02-14 16:23:39', '0000-00-00 00:00:00'),
+(11, 'Maria Quispe Montes', '74664754', '28837773', 'COPELMEX', 'maria@gmail.com', 'av. panamerica nro 540455', '2023-02-14 16:23:39', '2025-09-11 18:34:52'),
 (12, 'Jorge condor', '987546254', '987546254', 'A&M GLOBAL SOLUTIONS COMPANY S.A.C.', 'jorgecondor@gmail.com', 'Av. El Polo Mz. F lote 17 Urb. El Club Santa María de Huachipa Lima15', '2025-07-09 11:39:25', '2025-07-09 11:40:14');
 
 -- --------------------------------------------------------
@@ -215,9 +216,7 @@ CREATE TABLE `tb_roles` (
 
 INSERT INTO `tb_roles` (`id_rol`, `rol`, `fyh_creacion`, `fyh_actualizacion`) VALUES
 (1, 'ADMINISTRADOR', '2023-01-23 23:15:19', '2023-01-23 23:15:19'),
-(3, 'VENDEDOR', '2023-01-23 19:11:28', '2023-01-23 20:13:35'),
-(4, 'CONTADOR', '2023-01-23 21:09:54', '0000-00-00 00:00:00'),
-(5, 'ALMACEN', '2023-01-24 08:28:24', '0000-00-00 00:00:00');
+(3, 'VENDEDOR', '2023-01-23 19:11:28', '2023-01-23 20:13:35');
 
 -- --------------------------------------------------------
 
@@ -349,7 +348,7 @@ ALTER TABLE `tb_almacen`
 -- AUTO_INCREMENT de la tabla `tb_carrito`
 --
 ALTER TABLE `tb_carrito`
-  MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_categorias`
@@ -361,13 +360,13 @@ ALTER TABLE `tb_categorias`
 -- AUTO_INCREMENT de la tabla `tb_clientes`
 --
 ALTER TABLE `tb_clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_compras`
 --
 ALTER TABLE `tb_compras`
-  MODIFY `id_compra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_compra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_proveedores`
@@ -391,7 +390,7 @@ ALTER TABLE `tb_usuarios`
 -- AUTO_INCREMENT de la tabla `tb_ventas`
 --
 ALTER TABLE `tb_ventas`
-  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Restricciones para tablas volcadas

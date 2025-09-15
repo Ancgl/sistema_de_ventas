@@ -40,7 +40,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">SISTEMA DE VENTAS </a>
+                <a href="#" class="nav-link">SISTEMA DE VENTAS - DA´MART</a>
             </li>
         </ul>
 
@@ -69,7 +69,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Brand Logo -->
         <a href="<?php echo $URL;?>" class="brand-link">
             <img src="<?php echo $URL;?>/public/images/nuevologo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">Sistema de Ventas</span>
+            <span class="brand-text font-weight-light">Da´Mart</span>
         </a>
 
         <!-- Sidebar -->

@@ -511,8 +511,9 @@ include ('../app/controllers/compras/listado_de_compras.php');
 
                                    <div class="col-md-12">
                                        <div class="form-group">
-                                           <button class="btn btn-primary btn-block" id="btn_guardar_compra" style="border-radius: 2px; color: #000000ff;"> <i class="fa fa-binoculars"></i> Generar compra</button>
+                                           <button class="btn btn-primary btn-block" id="btn_guardar_compra" style="border-radius: 2px; color: #000000ff;"> <i class="fa fa-download"></i> Generar compra</button>
                                        </div>
+                                       
                                    </div>
                                    <script>
                                        $('#btn_guardar_compra').click(function () {

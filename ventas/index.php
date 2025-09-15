@@ -68,7 +68,7 @@ include ('../app/controllers/ventas/listado_de_ventas.php');
                                             <td>
                                                 <center>
                                                     <!-- Botón -->
-                                                    <button type="button" class="btn btn-primary" 
+                                                    <button type="button" class="btn btn-primary btn-sm" 
                                                             data-toggle="modal" data-target="#Modal_productos<?php echo $id_venta;?>" style="border-radius: 2px; color: #000000ff;">
                                                         <i class="fa fa-shopping-basket"></i> Productos
                                                     </button>
@@ -191,15 +191,15 @@ include ('../app/controllers/ventas/listado_de_ventas.php');
                                             <td>
                                                  
                                                 <center>
-                                                    <a href="show.php?id_venta=<?php echo $id_venta;?>" class="btn" style="background-color: #17a2b8; color: #000000ff;">
+                                                    <a href="show.php?id_venta=<?php echo $id_venta;?>" class="btn btn-sm" style="background-color: #17a2b8; color: #000000ff;">
                                                         <i class="fa fa-binoculars"></i>
                                                     </a>
 
-                                                    <a href="delete.php?id_venta=<?php echo $id_venta;?>&nro_venta=<?php echo $nro_venta;?>" class="btn" style="background-color: #ff0000ff; color: #000000ff;">
+                                                    <a href="delete.php?id_venta=<?php echo $id_venta;?>&nro_venta=<?php echo $nro_venta;?>" class="btn btn-sm" style="background-color: #ff0000ff; color: #000000ff;">
                                                         <i class="fa fa-trash-alt"></i>
                                                     </a>
 
-                                                    <a href="../app/controllers/ventas/imprimir_venta.php?id_venta=<?php echo $id_venta_get; ?>" target="_blank" class="btn" style="background-color: #0db10dff; color: #000000ff;">
+                                                    <a href="factura.php?id_venta=<?php echo $id_venta_get; ?>" target="_blank" class="btn btn-sm" style="background-color: #0db10dff; color: #000000ff;">
                                                         <i class="fa fa-file-pdf"></i>
                                                     </a>
                                                 </center>

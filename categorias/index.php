@@ -67,7 +67,7 @@ include ('../app/controllers/categorias/listado_de_categoria.php');
                                             <center>
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-success" data-toggle="modal"
-                                                            data-target="#modal-update<?php echo $id_categoria;?>">
+                                                            data-target="#modal-update<?php echo $id_categoria;?>" style="border-radius: 2px; color: #000000ff;">
                                                         <i class="fa fa-pencil-alt"></i> Editar
                                                     </button>
                                                     <!-- modal para actualizar categorias -->

@@ -1,119 +1,128 @@
-<?php
-require_once('../app/TCPDF-main/tcpdf.php');
-include('../app/config.php');
+ <?php
+// Ejemplo de datos dinámicos (puedes traerlos desde tu BD)
+$empresa = [
+    "ruc" => "20611753994",
+    "razon" => "A & M GLOBAL SOLUTIONS COMPANY S.A.C.",
+    "atencion" => "Cristian Abel",
+    "telefono" => "999742648",
+    "email" => "amglobalsolutions@solarcityperu.com",
+    "condicion" => "Contado/Transfer.",
+    "entrega" => "10-12 días",
+    "garantia" => "12 meses"
+];
 
-$id_venta_get = $_GET['id_venta'];
-$nro_venta_get = $_GET['nro_venta'];
+$cliente = [
+    "nombre" => "Nuevo Cliente",
+    "otros" => "0000989",
+    "direccion" => "",
+    "telefono" => "",
+    "email" => ""
+];
 
-// (ejemplo) consulta de datos de la venta, cliente y productos
-$sql = "SELECT v.fecha_venta, c.nombre_cliente, c.nit_ci_cliente, c.celular_cliente, c.email_cliente,
-               p.nombre_producto, dv.cantidad, dv.precio
-        FROM tb_ventas v
-        JOIN tb_clientes c ON v.id_cliente = c.id_cliente
-        JOIN tb_detalle_ventas dv ON v.id_venta = dv.id_venta
-        JOIN tb_productos p ON dv.id_producto = p.id_producto
-        WHERE v.id_venta = :id_venta";
+$items = [
+    ["CABLE SOLAR FOTOVOLTAICO NX20H 10AWG - 6MM2 NEGRO", "UND", 20, 9.00],
+    ["CABLE SOLAR FOTOVOLTAICO NX20H 10AWG - 6MM2 ROJO", "UND", 20, 9.00],
+    ["CONECTOR PANEL SOLAR TERMINAL MC4 TWINSEIL X PAR", "UND", 1, 18.00],
+    ["TABLERO ADOSABLE METALICO IP68 600x800x300 MM", "UND", 1, 300.00],
+    ["SPD DC FEED 2P 600VDC 20KA-40KA", "UND", 1, 110.00],
+    ["DC INTERRUPTOR FEED 2P 63A 550VDC", "UND", 1, 95.00],
+    ["AC INTERRUPTOR FEED 2P 40A 230VAC", "UND", 1, 90.00],
+    ["BORNERA UNIVERSAL 10MM2 TIPO TORNILLO", "UND", 1, 15.00],
+    ["CABLE UNIFILAR 50MM2 CONEXION INVERSOR - BATERIAS", "UND", 10, 18.00],
+    ["ESTRUCTURA 6 PANELES 144C 40MM COPLANAR FALCAT", "UND", 1, 1800.00],
+    ["REJILLA C/FILTRO 204.5x204.5 MM - RAL7035", "UND", 2, 250.00],
+    ["PANEL SOLAR PULS BIFACIAL DUAL GLASS MONOCRISTALINO 580W", "UND", 10, 350.00],
+    ["INVERSOR CARGADOR FELICITY SOLAR OFF-GRID 8kVA/8kW", "UND", 1, 3500.00],
+    ["BATERIA 300AH 48V 15KWH LITHIUM POWER BATTERY", "UND", 1, 6890.00],
+];
 
-$query = $pdo->prepare($sql);
-$query->bindParam(':id_venta', $id_venta_get, PDO::PARAM_INT);
-$query->execute();
-$ventas_datos = $query->fetchAll(PDO::FETCH_ASSOC);
-
-$venta = $ventas_datos[0]; // datos generales
-$fecha = date("d/m/Y H:i");
-
-// --- PDF ---
-$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
-$pdf->setPrintHeader(false);
-$pdf->setPrintFooter(false);
-$pdf->SetMargins(10, 10, 10);
-$pdf->AddPage();
-$pdf->setFont('helvetica', '', 10);
-
-// Encabezado moderno
-$html = '
-<style>
-h1 { color:#2F5597; text-align:center; }
-.table-header td { background-color:#2F5597; color:#fff; font-weight:bold; }
-.table-products th { background-color:#f2f2f2; }
-</style>
-
-<table border="0" cellpadding="4">
-  <tr>
-    <td width="60%">
-      <b style="font-size:14px;">Sistema de Ventas Ancgl</b><br>
-      Av. Alcázar Morod de Arica 512<br>
-      Lima - PERÚ
-    </td>
-    <td width="40%" align="right">
-      <b>RUC:</b> 2045272720 <br>
-      <b>Factura Nro:</b> '.$nro_venta_get.' <br>
-      <b>Fecha:</b> '.$fecha.'
-    </td>
-  </tr>
-</table>
-
-<h1>FACTURA</h1>
-
-<table border="0" cellpadding="4">
-  <tr>
-    <td><b>Cliente:</b> '.$venta['nombre_cliente'].'</td>
-    <td><b>Documento:</b> '.$venta['nit_ci_cliente'].'</td>
-  </tr>
-  <tr>
-    <td><b>Celular:</b> '.$venta['celular_cliente'].'</td>
-    <td><b>Email:</b> '.$venta['email_cliente'].'</td>
-  </tr>
-</table>
-
-<br><br>
-
-<table border="1" cellspacing="0" cellpadding="4" class="table-products">
-  <thead>
-    <tr>
-      <th width="10%">Cant.</th>
-      <th width="50%">Producto</th>
-      <th width="20%">Precio</th>
-      <th width="20%">Total</th>
-    </tr>
-  </thead>
-  <tbody>';
-
-$total_general = 0;
-foreach ($ventas_datos as $item) {
-    $subtotal = $item['cantidad'] * $item['precio'];
-    $total_general += $subtotal;
-    $html .= '
-    <tr>
-      <td>'.$item['cantidad'].'</td>
-      <td>'.$item['nombre_producto'].'</td>
-      <td align="right">'.number_format($item['precio'],2).'</td>
-      <td align="right">'.number_format($subtotal,2).'</td>
-    </tr>';
+$total = 0;
+foreach ($items as $it) {
+    $total += $it[2] * $it[3];
 }
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Factura / Cotización</title>
+    <style>
+        body { font-family: Arial, sans-serif; font-size: 13px; }
+        .header { display: flex; justify-content: space-between; align-items: center; }
+        .header img { width: 150px; }
+        .box { border: 1px solid #000; padding: 8px; margin: 5px 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #000; padding: 5px; text-align: center; }
+        th { background: #00A65A; color: #fff; }
+        .total { text-align: right; font-size: 16px; font-weight: bold; margin-top: 20px; }
+        .notas { margin-top: 15px; font-size: 12px; }
+        .green { background: #00A65A; color: #fff; padding: 3px 10px; }
+        @media print {
+            button { display: none; }
+        }
+    </style>
+</head>
+<body>
 
-$html .= '
-  </tbody>
+<div class="header">
+    <img src="logo.png" alt="LOGO">
+    <div class="box">
+        <b>RUC: <?= $empresa['ruc'] ?></b><br>
+        <span class="green">COTIZACIÓN</span><br>
+        <b>N° 010975-2025</b>
+    </div>
+</div>
+
+<div class="box">
+    <b>EMISOR:</b><br>
+    <?= $empresa['razon'] ?><br>
+    Atención: <?= $empresa['atencion'] ?><br>
+    Tel: <?= $empresa['telefono'] ?><br>
+    Email: <?= $empresa['email'] ?><br>
+</div>
+
+<div class="box">
+    <b>CLIENTE:</b><br>
+    <?= $cliente['nombre'] ?><br>
+    Código: <?= $cliente['otros'] ?><br>
+    Dirección: <?= $cliente['direccion'] ?><br>
+    Tel: <?= $cliente['telefono'] ?><br>
+    Email: <?= $cliente['email'] ?><br>
+</div>
+
+<table>
+    <tr>
+        <th>#</th>
+        <th>Cant.</th>
+        <th>U.M.</th>
+        <th>Descripción</th>
+        <th>P.Unit</th>
+        <th>Total</th>
+    </tr>
+    <?php foreach ($items as $i => $it) { ?>
+    <tr>
+        <td><?= $i+1 ?></td>
+        <td><?= $it[2] ?></td>
+        <td><?= $it[1] ?></td>
+        <td style="text-align: left;"><?= $it[0] ?></td>
+        <td>S/ <?= number_format($it[3],2) ?></td>
+        <td>S/ <?= number_format($it[2]*$it[3],2) ?></td>
+    </tr>
+    <?php } ?>
 </table>
 
-<br><br>
-<table border="0" cellpadding="4">
-  <tr>
-    <td width="70%"></td>
-    <td width="30%" style="font-size:12px;">
-      <b>Total: S/ '.number_format($total_general,2).'</b>
-    </td>
-  </tr>
-</table>
-';
+<div class="total">
+    TOTAL: S/ <?= number_format($total,2) ?>
+</div>
 
-$pdf->writeHTML($html, true, false, true, false, '');
+<div class="notas">
+    <b>Notas:</b><br>
+    - Los precios no incluyen instalación.<br>
+    - Equipos en stock.<br>
+    - Garantía <?= $empresa['garantia'] ?>.<br>
+</div>
 
-// QR con datos dinámicos
-$qr_text = "Factura Nro: $nro_venta_get \nCliente: ".$venta['nombre_cliente']."\nTotal: S/ ".number_format($total_general,2)."\nFecha: $fecha";
-$style = array('border' => 0, 'vpadding' => 'auto', 'hpadding' => 'auto', 'fgcolor' => array(0,0,0), 'bgcolor' => false);
-$pdf->write2DBarcode($qr_text, 'QRCODE,H', 160, 220, 40, 40, $style);
+<button onclick="window.print()">Imprimir</button>
 
-// salida
-if (ob_get_length()) ob_end_clean();
-$pdf->Output('factura_'.$nro_venta_get.'.pdf', 'I');
+</body>
+</html>

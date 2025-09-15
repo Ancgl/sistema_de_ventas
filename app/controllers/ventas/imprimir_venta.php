@@ -1,6 +1,4 @@
 
-
-
 <?php
 require_once('../../TCPDF-main/tcpdf.php');
 include('../../config.php');

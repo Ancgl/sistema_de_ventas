@@ -35,12 +35,15 @@ include ('../app/controllers/clientes/listado_de_clientes.php');
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
                             </div>
+                            
                         </div>
 
                         <div class="card-body">
-                            <b>Carrito</b> 
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-buscar_producto">
-                                <i class="fa fa-search"></i> Buscar producto
+                           
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#modal-buscar_producto" style="border-radius: 2px; color: #000000ff;">
+                                <i class="fa fa-binoculars"></i>
+                                Buscar producto
                             </button>
 
                             <div class="modal fade" id="modal-buscar_producto">
@@ -220,7 +223,7 @@ include ('../app/controllers/clientes/listado_de_clientes.php');
                                                 <td> 
                                                     <form action="../app/controllers/ventas/borrar_carrito.php" method="post">
                                                         <input type="text" name="id_carrito" value="<?php echo $id_carrito?>" hidden>
-                                                        <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Borrar</button>
+                                                        <center><button type="submit" class="btn btn-sm" style="background-color: #ff1100ff; color: #000000ff;"><i class="fa fa-trash-alt"></i> </button></center>
                                                     </form>
                                                 </td>
                                             </tr>
@@ -252,9 +255,11 @@ include ('../app/controllers/clientes/listado_de_clientes.php');
                         </div>
                         
                         <div class="card-body">
-                            <B>Cliente</B>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-buscar_cliente">
-                                <i class="fa fa-search"></i> Buscar Cliente
+                            
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#modal-buscar_cliente" style="border-radius: 2px; color: #000000ff;">
+                                    <i class="fa fa-binoculars"></i>
+                                    Buscar Cliente
                             </button>
 
                             <div class="modal fade" id="modal-buscar_cliente">
@@ -350,7 +355,7 @@ include ('../app/controllers/clientes/listado_de_clientes.php');
                 <div class="col-md-3">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
-                            <h3 class="card-title"> <i class="fa fa-shopping-basket"></i> Registra Venta </h3>
+                            <h3 class="card-title"> <i class="fa fa-shopping-basket"></i> Registro de la Venta </h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
                             </div>
@@ -385,7 +390,9 @@ include ('../app/controllers/clientes/listado_de_clientes.php');
                             </div>
                             <hr>
                             <div class="form-group">
-                                <button id="btn_guardar_venta" class="btn btn-primary btn-block">Guardar Venta</button>
+                                <button id="btn_guardar_venta" class="btn btn-primary btn-block" style="color: #000000ff;">
+                                    <i class="fa fa-cloud-upload-alt"></i> Guardar Venta
+                                </button>
                                 <div id="respuesta_registro_venta"></div>
                                 <script>
                                     $('#btn_guardar_venta').click(function () {

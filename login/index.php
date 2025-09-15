@@ -19,7 +19,7 @@
 
     <style>
         body.login-page {
-            background: url('../public/images/fon.jpg') no-repeat center center fixed;
+            background: url('../public/images/fondo1.jpg') no-repeat center center fixed;
             background-size: cover;
         }
         .overlay {
