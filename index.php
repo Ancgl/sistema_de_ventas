@@ -62,7 +62,7 @@ include ('app/controllers/ventas/listado_de_ventas.php');
     <!-- Main content -->
     <div class="content">
         <div class="container-fluid">
-            <h3 style="color: white;">Reportes de la Empresa</h3>
+            <h3 style="color: white;">Reportes de la Empresa </h3>
             <br>
             <div class="row">
 
@@ -92,7 +92,7 @@ include ('app/controllers/ventas/listado_de_ventas.php');
 
 
                 <div class="col-lg-3 col-6">
-                    <div class="small-box " style="background-color: #15867dff; color: white;">
+                    <div class="small-box " style="background-color: #15867dff; color: white; border-radius: 2px;">
                         <div class="inner">
                             <?php
                             $contador_de_roles = 0;
@@ -116,7 +116,7 @@ include ('app/controllers/ventas/listado_de_ventas.php');
 
 
                 <div class="col-lg-3 col-6">
-                    <div class="small-box" style="background-color: #15867dff; color: white;">
+                    <div class="small-box" style="background-color: #15867dff; color: white; border-radius: 2px;">
                         <div class="inner">
                             <?php
                             $contador_de_categorias = 0;
@@ -140,7 +140,7 @@ include ('app/controllers/ventas/listado_de_ventas.php');
 
 
                 <div class="col-lg-3 col-6">
-                    <div class="small-box " style="background-color: #15867dff; color: white;">
+                    <div class="small-box " style="background-color: #15867dff; color: white; border-radius: 2px;">
                         <div class="inner">
                             <?php
                             $contador_de_productos = 0;
@@ -167,7 +167,7 @@ include ('app/controllers/ventas/listado_de_ventas.php');
 
 
                 <div class="col-lg-3 col-6">
-                    <div class="small-box " style="background-color: #15867dff; color: white;">
+                    <div class="small-box " style="background-color: #15867dff; color: white; border-radius: 2px;">
                         <div class="inner">
                             <?php
                             $contador_de_proveedores = 0;
@@ -193,7 +193,7 @@ include ('app/controllers/ventas/listado_de_ventas.php');
 
 
                 <div class="col-lg-3 col-6">
-                    <div class="small-box " style="background-color: #15867dff; color: white;">
+                    <div class="small-box " style="background-color: #15867dff; color: white; border-radius: 2px;">
                         <div class="inner">
                             <?php
                             $contador_de_compras = 0;
@@ -218,7 +218,7 @@ include ('app/controllers/ventas/listado_de_ventas.php');
                 
 
                 <div class="col-lg-3 col-6">
-                    <div class="small-box" style="background-color: #15867dff; color: white;">
+                    <div class="small-box" style="background-color: #15867dff; color: white; border-radius: 2px;">
                         <div class="inner">
                             <?php
                             // Cuenta de forma segura (evita warning si $ventas_datos no está definida)
@@ -240,7 +240,7 @@ include ('app/controllers/ventas/listado_de_ventas.php');
 
 
                 <div class="col-lg-3 col-6">
-                    <div class="small-box" style="background-color: #15867dff; color: white;">
+                    <div class="small-box" style="background-color: #15867dff; color: white; border-radius: 2px;">
                         <div class="inner">
                             <?php
                             $contador_de_clientes = 0;
