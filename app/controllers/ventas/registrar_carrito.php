@@ -6,16 +6,19 @@ include ('../../config.php');
 $nro_venta = $_GET['nro_venta'];
 $id_producto = $_GET['id_producto'];
 $cantidad = $_GET['cantidad'];
+$fyh_creacion = date("Y-m-d H:i:s");
+$fyh_actualizacion = date("Y-m-d H:i:s");
 
 
 $sentencia = $pdo->prepare("INSERT INTO tb_carrito
-       (nro_venta, id_producto, cantidad,  fyh_creacion) 
-VALUES (:nro_venta, :id_producto,:cantidad,:fyh_creacion)");
+       (nro_venta, id_producto, cantidad, fyh_creacion, fyh_actualizacion) 
+VALUES (:nro_venta, :id_producto, :cantidad, :fyh_creacion, :fyh_actualizacion)");
 
-$sentencia->bindParam('nro_venta',$nro_venta);
-$sentencia->bindParam('id_producto',$id_producto);
-$sentencia->bindParam('cantidad',$cantidad);
-$sentencia->bindParam('fyh_creacion',$fechaHora);
+$sentencia->bindParam('nro_venta', $nro_venta);
+$sentencia->bindParam('id_producto', $id_producto);
+$sentencia->bindParam('cantidad', $cantidad);
+$sentencia->bindParam('fyh_creacion', $fyh_creacion);
+$sentencia->bindParam('fyh_actualizacion', $fyh_actualizacion);
 
 if($sentencia->execute()){
 
@@ -37,6 +40,11 @@ if($sentencia->execute()){
     </script>
     <?php
 }
+
+
+
+
+
 
 
 

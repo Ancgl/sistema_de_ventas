@@ -57,8 +57,9 @@
         $respuesta = $_SESSION['mensaje']; ?>
         <script>
             Swal.fire({
-                position: 'top-end',
+                //position: 'top-end',
                 icon: 'error',
+                  heightAuto: false,
                 title: '<?php echo $respuesta;?>',
                 showConfirmButton: false,
                 timer: 1500
@@ -75,7 +76,7 @@
     <br>
     <div class="card card-outline ">
         <div class="card-header text-center">
-            <a href="../public/templeates/AdminLTE-3.2.0/index2.html" class="h1" style="color: #000;"><h2>Bienvenido al Sistema</h2></a>
+            <a href="#" class="h1" style="color: #000;"><h2>Bienvenido al Sistema</h2></a>
             <a href="" style="color: #000;">Ingrese sus Datos Correctamente</a>
         </div>
         <div class="card-body">
@@ -102,7 +103,7 @@
                 <div class="row">
                     <!-- /.col -->
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary btn-block">Iniciar Sesion</button>
+                        <button type="submit" class="btn btn-primary btn-block" >Iniciar Sesion</button>
                     </div>
                     <!-- /.col -->
                 </div>

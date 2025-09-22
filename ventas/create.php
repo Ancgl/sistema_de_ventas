@@ -142,25 +142,36 @@ include ('../app/controllers/clientes/listado_de_clientes.php');
                                                     </div>
                                                 </div>
                                                 <button id="btn_registar_carrito" style="float: right" class="btn btn-primary">Agregar</button>
-                                                <div id="respuesta_carrito"></div>
-                                                <script>
-                                                    $(btn_registar_carrito).click(function(){
+                                                    <div id="respuesta_carrito"></div>
+                                                    <script>
+                                                    $('#btn_registar_carrito').click(function(){
                                                         var nro_venta = '<?php echo $contador_de_ventas + 1; ?>';
-                                                        var id_producto = $('#id_producto').val();
-                                                        var cantidad = $('#cantidad').val();
-                                                        
-                                                        if (id_producto=="") {
-                                                            alert("Debe de llenar los productos");
-                                                        }else if(cantidad=="") {
-                                                            alert("Debe de llenar la cantidad de los Productos");
-                                                        }else{
+                                                        var id_producto = $('#id_producto').val().trim();
+                                                        var cantidad = $('#cantidad').val().trim();
+
+                                                        if(id_producto === "" && cantidad === ""){
+                                                            alert("Debe seleccionar un producto y llenar la cantidad");
+                                                        } else if(id_producto === ""){
+                                                            alert("Debe seleccionar un producto");
+                                                        } else if(cantidad === ""){
+                                                            alert("Debe llenar la cantidad de productos");
+                                                        } else if(isNaN(cantidad) || parseInt(cantidad) <= 0){
+                                                            alert("Cantidad inválida. Debe ser un número mayor que 0");
+                                                        } else {
                                                             var url = "../app/controllers/ventas/registrar_carrito.php";
-                                                            $.get(url,{nro_venta:nro_venta, id_producto:id_producto, cantidad: cantidad},function (datos) {
+                                                            $.get(url, {nro_venta: nro_venta, id_producto: id_producto, cantidad: cantidad}, function(datos){
                                                                 $('#respuesta_carrito').html(datos);
+                                                                // Limpiar los campos después de agregar
+                                                                $('#id_producto').val('');
+                                                                $('#producto').val('');
+                                                                $('#descripcion').val('');
+                                                                $('#precio_venta').val('');
+                                                                $('#cantidad').val('');
                                                             });
                                                         }
                                                     });
-                                                </script>
+                                                    </script>
+
                                                 <br><br>
                                             </div>
                                         </div>
