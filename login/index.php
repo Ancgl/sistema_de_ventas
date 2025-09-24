@@ -19,7 +19,7 @@
 
     <style>
         body.login-page {
-            background: url('../public/images/fondo1.jpg') no-repeat center center fixed;
+            background: url('../public/images/fondo.jpg') no-repeat center center fixed;
             background-size: cover;
         }
         .overlay {
@@ -28,7 +28,7 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        background: rgba(24, 243, 42, 0.3); /* Cambia el color y la opacidad aquí */
+        background: rgba(243, 24, 24, 0.2); /* Cambia el color y la opacidad aquí */
         z-index: 1;
         }
         .login-box {

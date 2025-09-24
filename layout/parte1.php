@@ -88,14 +88,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Sidebar Menu -->
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                    <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
-
-
-
+           
 
                     <li class="nav-item ">
-                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white; border-radius: 2px;">
+                        <a href="#" class="nav-link active" style="background-color:rgba(90, 95, 99); color: white; border-radius: 2px;">
                             <i class="nav-icon fas fa-user"></i>
                             <p>
                                 Usuarios
@@ -117,9 +113,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </li>
                         </ul>
                     </li>
-
-
-
 
 
 
@@ -169,8 +162,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </li>
                         </ul>
                     </li>
-
-
 
 
 

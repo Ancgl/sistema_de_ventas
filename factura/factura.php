@@ -1,4 +1,4 @@
-<?php
+ <?php
 include ('../app/config.php');
 
 $id_venta_get = isset($_GET['id_venta']) ? $_GET['id_venta'] : null;
@@ -35,7 +35,7 @@ $query_productos->execute();
 $productos = $query_productos->fetchAll(PDO::FETCH_ASSOC);
 
 $empresa = [
-    "ruc" => "20611753994",
+    "ruc" => "2000000001",
     "razon" => "BODEGA DA´MART",
     "atencion" => "Cristian Ancgl",
     "telefono" => "+51 958 123 456",
@@ -60,12 +60,16 @@ foreach ($productos as $producto) {
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Factura #00<?= $venta['nro_venta']; ?></title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Factura #00<?= $venta['nro_venta']; ?> - <?= time(); ?></title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 body { font-family: 'Arial', sans-serif; background: #f5f6fa; margin: 0; padding: 0; }
-.container { max-width: 950px; margin: 5px auto; background: #ffffffff; padding: 40px; border-radius: 5px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+.container { max-width: 900px; margin: 5px auto; background: #ffffffff; padding: 70px; border-radius: 5px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
 .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
 .header img { width: 120px; }
 .invoice-info { background: #344cb9ff; color: #fff; 
@@ -74,6 +78,7 @@ body { font-family: 'Arial', sans-serif; background: #f5f6fa; margin: 0; padding
 .invoice-info h1 { margin: 0; font-size: 15px; }
 .invoice-info span { font-weight: 400; display: block; margin-top: 2px; font-size: 13px; }
 .invoice-info i { margin-right: 5px;}
+.invoice-info * { text-decoration: none !important; cursor: default !important; user-select: none !important; }
 .info-section { display: flex; justify-content: space-between; margin-bottom: 30px; gap: 20px; }
 .info-box { flex: 1; background: #f7f9fc; padding: 10px 20px; border-radius: 2px; }
 .info-box h3 { margin-top: 0; color: #000000ff; border-bottom: 2px solid #000000ff; display: inline-block; padding-bottom: 4px; }
@@ -89,7 +94,19 @@ tr:hover { background: #f1fdf7; }
 .notes { margin-top: 30px; background: #f7f9fc; padding: 20px; border-left: 5px solid #344cb9ff; border-radius: 2px; font-size: 13px; }
 button { padding: 12px 25px; background: #344cb9ff; border: none; color: #fff; border-radius: 2px; font-weight: bold; cursor: pointer; margin-top: 20px; display: flex; align-items: center; gap: 8px; }
 button:hover { background: #344cb9ff; }
-@media print { button { display: none; } body { background: #fff; } .container { box-shadow: none; margin: 0; padding: 20px; } }
+@media print { 
+    button { display: none; } 
+    body { background: #fff; } 
+    .container { box-shadow: none; margin: 0; padding: 20px; } 
+    @page { margin: 0; }
+    body { -webkit-print-color-adjust: exact; }
+    * { -webkit-print-color-adjust: exact !important; }
+    a[href]:after { content: none !important; }
+    a { text-decoration: none !important; }
+    *:after { content: none !important; }
+    *:before { content: none !important; }
+    .invoice-info * { text-decoration: none !important; cursor: default !important; user-select: none !important; }
+}
 </style>
 </head>
 <body>
@@ -99,9 +116,11 @@ button:hover { background: #344cb9ff; }
         <div class="invoice-info">
             <h1><center><i class="fa-solid fa-file-invoice"></i>BV / FAC</center></h1>
             <hr>
-            <span style="display:block; text-align:left;"><i class="fa-solid fa-hashtag"></i>0000<?= $venta['nro_venta']; ?></span>
-            <span><i class="fa-solid fa-id-card"></i>RUC: <?= $empresa['ruc'] ?></span>
-            <span><i class="fa-solid fa-calendar"></i>Fecha: <?= date('d/m/Y', strtotime($venta['fyh_creacion'])); ?></span>
+            <div style="text-align: center;">
+                <div style="text-align: left; text-decoration: none !important; cursor: default !important; user-select: none !important;">N°# :  00000<?= $venta['nro_venta']; ?></div>
+                <div style="text-align: left; text-decoration: none !important; cursor: default !important; user-select: none !important;">RUC: <?= $empresa['ruc'] ?></div>
+                <div style="text-align: left; text-decoration: none !important; cursor: default !important; user-select: none !important;">Fecha: <?= date('d/m/Y', strtotime($venta['fyh_creacion'])); ?></div>
+            </div>
         </div>
     </div>
     <div class="info-section">
@@ -164,8 +183,14 @@ button:hover { background: #344cb9ff; }
         
     </div>
     
-    <button onclick="window.print()"><i class="fa-solid fa-print"></i>Imprimir</button>
+    <button onclick="imprimirFactura()"><i class="fa-solid fa-print"></i>Imprimir</button>
     
 </div>
+
+<script>
+function imprimirFactura() {
+    window.print();
+}
+</script>
 </body>
 </html>
