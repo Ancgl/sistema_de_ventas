@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-09-2025 a las 01:36:13
+-- Tiempo de generación: 27-09-2025 a las 22:56:36
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -185,9 +185,8 @@ CREATE TABLE `tb_proveedores` (
 --
 
 INSERT INTO `tb_proveedores` (`id_proveedor`, `nombre_proveedor`, `celular`, `telefono`, `empresa`, `email`, `direccion`, `fyh_creacion`, `fyh_actualizacion`) VALUES
-(10, 'Jose Quente', '975657007', '27736632', 'CASCADA', 'hilariweb@gmail.com', 'Av. del Maestro S/N', '2023-02-12 18:27:10', '2025-09-24 18:11:23'),
-(11, 'Maria Quispe Montes', '74664754', '28837773', 'COPELMEX', 'maria@gmail.com', 'av. panamerica nro 540455', '2023-02-14 16:23:39', '2025-09-11 18:34:52'),
-(12, 'Jorge condor', '987546254', '987546254', 'A&M GLOBAL SOLUTIONS COMPANY S.A.C.', 'jorgecondor@gmail.com', 'Av. El Polo Mz. F lote 17 Urb. El Club Santa María de Huachipa Lima15', '2025-07-09 11:39:25', '2025-07-09 11:40:14');
+(11, 'Maria Quispe Montes', '74664754', '28837773', 'COPELMEX AVICOLA S.A.C', 'mariaquispe@gmail.com', 'av. panamerica nro 540455 rios', '2023-02-14 16:23:39', '2025-09-27 15:23:34'),
+(12, 'Jorge condor Paulino', '987546254', '987546254', 'CORPORACION SIMEONE S.A.C.', 'jorgecondor@gmail.com', 'Av. El Polo El Club Santa María de Huachipa Lima15', '2025-07-09 11:39:25', '2025-09-27 15:22:37');
 
 -- --------------------------------------------------------
 
@@ -232,8 +231,8 @@ CREATE TABLE `tb_usuarios` (
 --
 
 INSERT INTO `tb_usuarios` (`id_usuario`, `nombres`, `email`, `password_user`, `token`, `id_rol`, `fyh_creacion`, `fyh_actualizacion`) VALUES
-(1, 'Oscar Valdes', 'oscarvaldes@gmail.com', '$2y$10$VIDXuo4wKCt/x5BHkwHZAOw9lJNirjyLbBHPa9AA4/xgOW.91y/DG', '', 1, '2023-01-24 15:16:01', '2025-07-15 17:36:51'),
-(3, 'Jhon Ancgl', 'jhonanco@gmail.com', '$2y$10$RVxD4fWMzuFTq9YVngkQneXL1wPGGE4QmWV4OI6xrZHv2VIAyiWBK', '', 1, '2025-06-02 11:40:14', '2025-06-02 11:43:06');
+(1, 'Oscar Valdes Torres', 'oscarvaldes@gmail.com', '$2y$10$VIDXuo4wKCt/x5BHkwHZAOw9lJNirjyLbBHPa9AA4/xgOW.91y/DG', '', 1, '2023-01-24 15:16:01', '2025-09-27 15:19:48'),
+(3, 'Jhon Anco Galvez', 'jhonanco@gmail.com', '$2y$10$RVxD4fWMzuFTq9YVngkQneXL1wPGGE4QmWV4OI6xrZHv2VIAyiWBK', '', 1, '2025-06-02 11:40:14', '2025-09-27 15:19:30');
 
 -- --------------------------------------------------------
 

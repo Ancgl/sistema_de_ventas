@@ -243,7 +243,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                     <li class="nav-item ">
                         <a href="#" class="nav-link active" style="background-color:rgb(23, 6, 99, 1); color: white; border-radius: 2px;">
-                            <i class="nav-icon fas fa-shopping-basket"></i>
+                            <i class="nav-icon fas fa-shopping-bag"></i>
                             <p>
                                 Ventas
                                 <i class="right fas fa-hand-point-left"></i>
