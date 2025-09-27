@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-09-2025 a las 22:56:36
+-- Tiempo de generación: 28-09-2025 a las 00:25:36
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -50,11 +50,11 @@ CREATE TABLE `tb_almacen` (
 --
 
 INSERT INTO `tb_almacen` (`id_producto`, `codigo`, `nombre`, `descripcion`, `stock`, `stock_minimo`, `stock_maximo`, `precio_compra`, `precio_venta`, `fecha_ingreso`, `imagen`, `id_usuario`, `id_categoria`, `fyh_creacion`, `fyh_actualizacion`) VALUES
-(1, 'P-00001', 'Coca Cola', 'Coca Cola de 1 litro', 34, 10, 100, '6', '6.50', '2023-02-12', '2025-09-24-05-49-38__coca.jpg', 1, 1, '2023-02-12 18:26:25', '2025-09-24 17:49:38'),
-(2, 'P-00002', 'AUDIFONOS', 'Con cargado incorporado', 41, 10, 200, '80', '120', '2023-02-13', '2023-02-13-02-29-53__8810fb37cb2f03d30c7c467ec772b5ed6811e7e6.jpeg', 1, 11, '2023-02-13 14:29:53', '0000-00-00 00:00:00'),
-(3, 'P-00003', 'VIÑA VIEJA', 'Vino Tinto Viña Vieja Valle de Ica 750 mL', 33, 10, 90, '50', '80', '2023-02-13', '2025-09-24-05-59-01__viña.jpg', 1, 1, '2023-02-13 14:35:15', '2025-09-24 18:06:42'),
-(4, 'P-00004', 'PIQUEOS', 'Piqueos Picantes huff', 18, 10, 100, '2', '3', '2025-07-14', '2025-07-14-11-56-35__piqueos.jpg', 3, 4, '2025-07-14 11:56:35', '2025-09-24 17:55:55'),
-(5, 'P-00005', 'Papas Lays Clásicas', 'Papas Lays Clásicas en bolsa 180g', 15, 5, 30, '2', '2', '2025-09-24', '2025-09-24-06-06-19__papalays.jpg', 3, 4, '2025-09-24 18:06:19', '2025-09-24 18:07:37');
+(1, 'P-00001', 'Coca Cola', 'Coca Cola de 1 litro', 33, 10, 100, '6', '6.50', '2023-02-12', '2025-09-24-05-49-38__coca.jpg', 1, 1, '2023-02-12 18:26:25', '2025-09-24 17:49:38'),
+(2, 'P-00002', 'PAN CHANCAY', 'Pan Chancay (Bolsa 4 Unidades)', 39, 5, 50, '3', '4', '2023-02-13', '2025-09-27-04-47-10__Chancay.jpg', 1, 11, '2023-02-13 14:29:53', '2025-09-27 16:47:42'),
+(3, 'P-00003', 'VIÑA VIEJA', 'Vino Tinto Viña Vieja Valle de Ica 750 mL', 32, 10, 90, '50', '80', '2023-02-13', '2025-09-24-05-59-01__viña.jpg', 1, 1, '2023-02-13 14:35:15', '2025-09-24 18:06:42'),
+(4, 'P-00004', 'PIQUEOS', 'Piqueos Picantes huff', 16, 10, 100, '2', '3', '2025-07-14', '2025-07-14-11-56-35__piqueos.jpg', 3, 4, '2025-07-14 11:56:35', '2025-09-24 17:55:55'),
+(5, 'P-00005', 'Papas Lays Clásicas', 'Papas Lays Clásicas en bolsa 180g', 12, 5, 30, '2', '2', '2025-09-24', '2025-09-24-06-06-19__papalays.jpg', 3, 4, '2025-09-24 18:06:19', '2025-09-24 18:07:37');
 
 -- --------------------------------------------------------
 
@@ -78,7 +78,12 @@ CREATE TABLE `tb_carrito` (
 INSERT INTO `tb_carrito` (`id_carrito`, `nro_venta`, `id_producto`, `cantidad`, `fyh_creacion`, `fyh_actualizacion`) VALUES
 (26, 1, 1, 1, '2025-09-04 17:54:32', '0000-00-00 00:00:00'),
 (34, 2, 3, 1, '2025-09-24 14:27:22', '2025-09-24 14:27:22'),
-(35, 2, 4, 5, '2025-09-24 14:27:28', '2025-09-24 14:27:28');
+(35, 2, 4, 5, '2025-09-24 14:27:28', '2025-09-24 14:27:28'),
+(41, 3, 1, 1, '2025-09-27 16:52:23', '2025-09-27 16:52:23'),
+(42, 3, 2, 2, '2025-09-27 16:52:28', '2025-09-27 16:52:28'),
+(43, 3, 3, 1, '2025-09-27 16:52:33', '2025-09-27 16:52:33'),
+(44, 3, 4, 2, '2025-09-27 16:52:39', '2025-09-27 16:52:39'),
+(45, 3, 5, 3, '2025-09-27 16:52:50', '2025-09-27 16:52:50');
 
 -- --------------------------------------------------------
 
@@ -255,7 +260,8 @@ CREATE TABLE `tb_ventas` (
 
 INSERT INTO `tb_ventas` (`id_venta`, `nro_venta`, `id_cliente`, `total_pagado`, `fyh_creacion`, `fyh_actualizacion`) VALUES
 (17, 1, 3, 13, '2025-09-04 17:54:57', '0000-00-00 00:00:00'),
-(21, 2, 3, 95, '2025-09-24 14:27:36', '2025-09-24 14:27:36');
+(21, 2, 3, 95, '2025-09-24 14:27:36', '2025-09-24 14:27:36'),
+(23, 3, 2, 107, '2025-09-27 16:53:12', '2025-09-27 16:53:12');
 
 --
 -- Índices para tablas volcadas
@@ -340,7 +346,7 @@ ALTER TABLE `tb_almacen`
 -- AUTO_INCREMENT de la tabla `tb_carrito`
 --
 ALTER TABLE `tb_carrito`
-  MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_categorias`
@@ -382,7 +388,7 @@ ALTER TABLE `tb_usuarios`
 -- AUTO_INCREMENT de la tabla `tb_ventas`
 --
 ALTER TABLE `tb_ventas`
-  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Restricciones para tablas volcadas

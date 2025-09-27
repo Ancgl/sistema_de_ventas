@@ -68,7 +68,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <aside class="main-sidebar elevation-4"  >
         <!-- Brand Logo -->
         <a href="<?php echo $URL;?>" class="brand-link">
-            <img src="<?php echo $URL;?>/public/images/logo2.jpg" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <img src="<?php echo $URL;?>/public/images/logo1.png" alt="" class="brand-image img-circle elevation-3" style="opacity: 0.8">
             <span class="brand-text font-weight-bold" >Da´Mart</span>
         </a>
 
@@ -77,7 +77,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="<?php echo $URL;?>/public/images/usuario.jpg" class="img-circle elevation-2" alt="User Image">
+                    <img src="<?php echo $URL;?>/public/images/usuario1.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
                     <a href="#" class="d-block"><?php echo $nombres_sesion;?></a>

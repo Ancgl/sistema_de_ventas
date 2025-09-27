@@ -71,7 +71,7 @@ foreach ($productos as $producto) {
 body { font-family: 'Arial', sans-serif; background: #f5f6fa; margin: 0; padding: 0; }
 .container { max-width: 900px; margin: 5px auto; background: #ffffffff; padding: 70px; border-radius: 5px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
 .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-.header img { width: 120px; }
+.header img { width: 150px; }
 .invoice-info { background: #344cb9ff; color: #fff; 
   padding: 10px 30px; border-radius: 2px; text-align: right; position: relative; max-width: 450px;     /* lo hace más ancho */
 }
@@ -112,7 +112,7 @@ button:hover { background: #344cb9ff; }
 <body>
 <div class="container" id="factura">
     <div class="header">
-        <img src="https://static.vecteezy.com/system/resources/previews/008/214/517/non_2x/abstract-geometric-logo-or-infinity-line-logo-for-your-company-free-vector.jpg" alt="Logo Empresa" >
+        <img src="../public/images/logos.png" alt="Logo Empresa" >
         <div class="invoice-info">
             <h1><center><i class="fa-solid fa-file-invoice"></i>BV / FAC</center></h1>
             <hr>
