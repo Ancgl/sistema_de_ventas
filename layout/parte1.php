@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sistema de ventas</title>
+    <title> Sistema Ventas</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -65,11 +65,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <aside class="main-sidebar elevation-4"  >
         <!-- Brand Logo -->
         <a href="<?php echo $URL;?>" class="brand-link">
-            <img src="<?php echo $URL;?>/public/images/logo2.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">Da´Mart</span>
+            <img src="<?php echo $URL;?>/public/images/logo2.jpg" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-bold" >Da´Mart</span>
         </a>
 
         <!-- Sidebar -->
@@ -91,24 +91,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
            
 
                     <li class="nav-item ">
-                        <a href="#" class="nav-link active" style="background-color:rgba(90, 95, 99); color: white; border-radius: 2px;">
+                        <a href="#" class="nav-link active" style="background-color:rgba(23, 6, 99, 1); color: white; border-radius: 2px;">
                             <i class="nav-icon fas fa-user"></i>
                             <p>
                                 Usuarios
-                                <i class="right fas fa-angle-left"></i>
+                                <i class="right fas fa-hand-point-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="<?php echo $URL;?>/usuarios" class="nav-link">
-                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem;"></i>
-                                    <p>Listado de usuarios</p>
+                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem; color: #fff;"></i>
+                                    <p style="color: #fff">Usuarios Registrados</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="<?php echo $URL;?>/usuarios/create.php" class="nav-link">
-                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem;"></i>
-                                    <p>Creación de usuario</p>
+                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem; color: #fff;"></i>
+                                    <p style="color: #fff">Registrar Usuario</p>
                                 </a>
                             </li>
                         </ul>
@@ -118,46 +118,46 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                     <li class="nav-item ">
-                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white; border-radius: 2px;">
+                        <a href="#" class="nav-link active" style="background-color:rgba(23, 6, 99, 1); color: white; border-radius: 2px;">
                             <i class="nav-icon fas fa-address-card"></i>
                             <p>
                                 Roles
-                                <i class="right fas fa-angle-left"></i>
+                                <i class="right fas fa-hand-point-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="<?php echo $URL;?>/roles" class="nav-link">
-                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem;"></i>
-                                    <p>Listado de roles</p>
+                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem; color: #fff;"></i>
+                                    <p style="color: #fff">Roles Registrados</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="<?php echo $URL;?>/roles/create.php" class="nav-link">
-                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem;"></i>
-                                    <p>Creación de rol</p>
+                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem; color: #fff;"></i>
+                                    <p style="color: #fff">Crear Nuevo Rol</p>
                                 </a>
                             </li>
                         </ul>
                     </li>
 
 
-
+                    
 
 
                     <li class="nav-item ">
-                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white; border-radius: 2px;">
+                        <a href="#" class="nav-link active" style="background-color:  rgb(23, 6, 99, 1); color: white; border-radius: 2px;">
                             <i class="nav-icon fas fa-tags"></i>
                             <p>
                                 Categorías
-                                <i class="right fas fa-angle-left"></i>
+                                <i class="right fas fa-hand-point-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="<?php echo $URL;?>/categorias" class="nav-link">
-                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem;"></i>
-                                    <p>Listado de categorías</p>
+                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem; color: #fff;"></i>
+                                    <p style="color: #fff">Lista de Categorías</p>
                                 </a>
                             </li>
                         </ul>
@@ -167,24 +167,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                     <li class="nav-item ">
-                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white; border-radius: 2px;">
+                        <a href="#" class="nav-link active" style="background-color:rgb(23, 6, 99, 1); color: white; border-radius: 2px;">
                             <i class="nav-icon fas fa-list"></i>
                             <p>
                                 Almacen
-                                <i class="right fas fa-angle-left"></i>
+                                <i class="right fas fa-hand-point-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="<?php echo $URL;?>/almacen" class="nav-link">
-                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem;"></i>
-                                    <p>Listado de productos</p>
+                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem; color: #fff;"></i>
+                                    <p style="color: #fff">Listado de Productos</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="<?php echo $URL;?>/almacen/create.php" class="nav-link">
-                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem;"></i>
-                                    <p>Creación de productos</p>
+                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem; color: #fff;"></i>
+                                    <p style="color: #fff">Registrar Producto</p>
                                 </a>
                             </li>
                         </ul>
@@ -194,24 +194,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                     <li class="nav-item ">
-                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white; border-radius: 2px;">
+                        <a href="#" class="nav-link active" style="background-color:rgb(23, 6, 99, 1); color: white; border-radius: 2px;">
                             <i class="nav-icon fas fa-cart-plus"></i>
                             <p>
                                 Compras
-                                <i class="right fas fa-angle-left"></i>
+                                <i class="right fas fa-hand-point-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="<?php echo $URL;?>/compras" class="nav-link">
-                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem;"></i>
-                                    <p>Listado de compras</p>
+                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem; color: #fff;"></i>
+                                    <p style="color: #fff">Compras Realizadas</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="<?php echo $URL;?>/compras/create.php" class="nav-link">
-                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem;"></i>
-                                    <p>Creación de compra</p>
+                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem; color: #fff;"></i>
+                                    <p style="color: #fff">Realizar Una Compra</p>
                                 </a>
                             </li>
                         </ul>
@@ -221,18 +221,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                     <li class="nav-item ">
-                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white; border-radius: 2px;">
+                        <a href="#" class="nav-link active" style="background-color: rgb(23, 6, 99, 1); color: white; border-radius: 2px;">
                             <i class="nav-icon fas fa-car"></i>
                             <p>
                                 Proveedores
-                                <i class="right fas fa-angle-left"></i>
+                                <i class="right fas fa-hand-point-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="<?php echo $URL;?>/proveedores" class="nav-link">
-                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem;"></i>
-                                    <p>Listado de proveedores</p>
+                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem; color: #fff;"></i>
+                                    <p style="color: #fff">Proveedores Registrados</p>
                                 </a>
                             </li>
                         </ul>
@@ -242,24 +242,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                     <li class="nav-item ">
-                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white; border-radius: 2px;">
+                        <a href="#" class="nav-link active" style="background-color:rgb(23, 6, 99, 1); color: white; border-radius: 2px;">
                             <i class="nav-icon fas fa-shopping-basket"></i>
                             <p>
                                 Ventas
-                                <i class="right fas fa-angle-left"></i>
+                                <i class="right fas fa-hand-point-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="<?php echo $URL;?>/ventas" class="nav-link">
-                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem;"></i>
-                                    <p>Listado de Ventas</p>
+                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem; color: #fff;"></i>
+                                    <p style="color: #fff">Ventas Generadas</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="<?php echo $URL;?>/ventas/create.php" class="nav-link">
-                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem;"></i>
-                                    <p>Realizar la venta</p>
+                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem; color: #fff;"></i>
+                                    <p style="color: #fff">Realizar Nueva venta</p>
                                 </a>
                             </li>
                         </ul>
@@ -269,18 +269,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                     <li class="nav-item ">
-                        <a href="#" class="nav-link active" style="background-color:rgb(90, 95, 99); color: white; border-radius: 2px;">
+                        <a href="#" class="nav-link active" style="background-color: rgb(23, 6, 99, 1); color: white; border-radius: 2px;">
                             <i class="nav-icon fas fa-users"></i>
                             <p>
                                 Clientes
-                                <i class="right fas fa-angle-left"></i>
+                                <i class="right fas fa-hand-point-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="<?php echo $URL;?>/clientes" class="nav-link">
-                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem;"></i>
-                                    <p>Listado de Clientes</p>
+                                    <i class="fas fa-check nav-icon" style="font-size: 0.8rem; color: #fff;"></i>
+                                    <p style="color: #fff">Listado de Clientes</p>
                                 </a>
                             </li>
                             
@@ -293,5 +293,44 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
         <!-- /.sidebar -->
     </aside>
+
+    <style>
+        .main-sidebar {
+            background: linear-gradient(to right, rgba(0, 38, 255, 0.9), rgba(31, 48, 141, 0.9), transparent) !important;
+        }
+
+        /* Opcional: mantener contraste en los enlaces */
+        .nav-sidebar>.nav-item>.nav-link {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+        .nav-sidebar>.nav-item>.nav-link:hover {
+            background-color: rgba(135, 13, 165, 0.2) !important;
+        }
+
+        .sidebar .info a {
+            color: white !important;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* Da´Mart */
+        .brand-text {
+            color: white !important;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* le da un pequeño brillo */
+        }
+
+        /* Más espacio entre los items del menú */
+        .nav-sidebar .nav-item {
+            margin-bottom: 5px;   /* espacio debajo de cada item */
+        }
+
+        /* Opcional: hacer que los enlaces sean un poco más altos */
+        .nav-sidebar .nav-link {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+    </style>
 
 

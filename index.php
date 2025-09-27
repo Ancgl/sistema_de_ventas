@@ -51,7 +51,8 @@ include ('app/controllers/ventas/listado_de_ventas.php');
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1 class="m-0 titulo-blanco">Bienvenido al SISTEMA de VENTAS - <?php echo $rol_sesion; ?> </h1>
+                    <br>
+                    <h1 class="m-0 titulo-blanco" style="font-weight: 600;">Reporte del SISTEMA de VENTAS - <?php echo $rol_sesion; ?> </h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -62,7 +63,7 @@ include ('app/controllers/ventas/listado_de_ventas.php');
     <!-- Main content -->
     <div class="content">
         <div class="container-fluid">
-            <h3 style="color: white;">Reportes de la Empresa </h3>
+            
             <br>
             <div class="row">
 
@@ -80,13 +81,10 @@ include ('app/controllers/ventas/listado_de_ventas.php');
                         </div>
                         <a href="<?php echo $URL;?>/usuarios/create.php">
                             <div class="icon">
-                                <i class="fas fa-user-plus"></i>
+                                <i class="fas fa-user-plus" style="color:white;"></i>
                             </div>
                         </a>
-                        <a href="<?php echo $URL;?>/usuarios" class="small-box-footer">
-                            Más detalle <i class="fas fa-arrow-circle-right" >
-                            </i>
-                        </a>
+                        
                     </div>
                 </div>
 
@@ -105,12 +103,10 @@ include ('app/controllers/ventas/listado_de_ventas.php');
                         </div>
                         <a href="<?php echo $URL;?>/roles/create.php">
                             <div class="icon">
-                                <i class="fas fa-address-card"></i>
+                                <i class="fas fa-address-card" style="color:white;"></i>
                             </div>
                         </a>
-                        <a href="<?php echo $URL;?>/roles" class="small-box-footer">
-                            Más detalle <i class="fas fa-arrow-circle-right"></i>
-                        </a>
+                        
                     </div>
                 </div>
 
@@ -129,12 +125,10 @@ include ('app/controllers/ventas/listado_de_ventas.php');
                         </div>
                         <a href="<?php echo $URL;?>/categorias">
                             <div class="icon">
-                                <i class="fas fa-tags"></i>
+                                <i class="fas fa-tags" style="color:white;"></i>
                             </div>
                         </a>
-                        <a href="<?php echo $URL;?>/categorias" class="small-box-footer">
-                            Más detalle <i class="fas fa-arrow-circle-right"></i>
-                        </a>
+                        
                     </div>
                 </div>
 
@@ -153,12 +147,10 @@ include ('app/controllers/ventas/listado_de_ventas.php');
                         </div>
                         <a href="<?php echo $URL;?>/almacen/create.php">
                             <div class="icon">
-                                <i class="fas fa-list"></i>
+                                <i class="fas fa-list" style="color:white;"></i>
                             </div>
                         </a>
-                        <a href="<?php echo $URL;?>/almacen" class="small-box-footer">
-                            Más detalle <i class="fas fa-arrow-circle-right"></i>
-                        </a>
+                        
                     </div>
                 </div>
 
@@ -177,12 +169,10 @@ include ('app/controllers/ventas/listado_de_ventas.php');
                         </div>
                         <a href="<?php echo $URL;?>/proveedores">
                             <div class="icon">
-                                <i class="fas fa-car"></i>
+                                <i class="fas fa-car" style="color:white;"></i>
                             </div>
                         </a>
-                        <a href="<?php echo $URL;?>/proveedores" class="small-box-footer">
-                            Más detalle <i class="fas fa-arrow-circle-right"></i>
-                        </a>
+                        
                     </div>
                 </div>
 
@@ -203,12 +193,10 @@ include ('app/controllers/ventas/listado_de_ventas.php');
                         </div>
                         <a href="<?php echo $URL;?>/compras">
                             <div class="icon">
-                                <i class="fas fa-cart-plus"></i>
+                                <i class="fas fa-cart-plus" style="color:white;"></i>
                             </div>
                         </a>
-                        <a href="<?php echo $URL;?>/compras" class="small-box-footer">
-                            Más detalle <i class="fas fa-arrow-circle-right"></i>
-                        </a>
+                        
                     </div>
                 </div>
 
@@ -226,12 +214,10 @@ include ('app/controllers/ventas/listado_de_ventas.php');
                         </div>
                         <a href="<?php echo $URL; ?>/ventas">
                             <div class="icon">
-                                <i class="fas fa-shopping-cart"></i>
+                                <i class="fas fa-shopping-cart" style="color:white;"></i>
                             </div>
                         </a>
-                        <a href="<?php echo $URL; ?>/ventas" class="small-box-footer">
-                            Más detalle <i class="fas fa-arrow-circle-right"></i>
-                        </a>
+                        
                     </div>
                 </div>
 
@@ -250,21 +236,19 @@ include ('app/controllers/ventas/listado_de_ventas.php');
                         </div>
                         <a href="<?php echo $URL; ?>/clientes">
                             <div class="icon">
-                                <i class="fas fa-user-tie"></i>
+                                <i class="fas fa-user-tie" style="color:white;"></i>
                             </div>
                         </a>
-                        <a href="<?php echo $URL; ?>/clientes" class="small-box-footer">
-                            Más detalle <i class="fas fa-arrow-circle-right"></i>
-                        </a>
+                        
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-12">
                   
             <!-- AREA CHART -->
-            <div class="card card-primary">
+            <div class="card card-info">
               <div class="card-header">
-                <h3 class="card-title">Area Chart</h3>
+                <h3 class="card-title">Reporte Escala</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -284,58 +268,18 @@ include ('app/controllers/ventas/listado_de_ventas.php');
             </div>
             <!-- /.card -->
 
-            <!-- DONUT CHART -->
-            <div class="card card-danger">
-              <div class="card-header">
-                <h3 class="card-title">Donut Chart</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="card-body"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                <canvas id="donutChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 335px;" width="335" height="250" class="chartjs-render-monitor"></canvas>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
+          
 
 
           </div>
           <!-- /.col (LEFT) -->
-          <div class="col-md-6">
-            <!-- LINE CHART -->
-            <div class="card card-info">
-              <div class="card-header">
-                <h3 class="card-title">Line Chart</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                  <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 335px;" width="335" height="250" class="chartjs-render-monitor"></canvas>
-                </div>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
+          <div class="col-md-12">
+           
 
             <!-- BAR CHART -->
             <div class="card card-success">
               <div class="card-header">
-                <h3 class="card-title">Bar Chart</h3>
+                <h3 class="card-title">Reporte Grafico</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -388,10 +332,10 @@ include ('app/controllers/ventas/listado_de_ventas.php');
     var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
 
     var areaChartData = {
-      labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels  : ['Enero', 'febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio','Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
       datasets: [
         {
-          label               : 'Digital Goods',
+          label               : 'Salidas',
           backgroundColor     : 'rgba(60,141,188,0.9)',
           borderColor         : 'rgba(60,141,188,0.8)',
           pointRadius          : false,
@@ -399,10 +343,10 @@ include ('app/controllers/ventas/listado_de_ventas.php');
           pointStrokeColor    : 'rgba(60,141,188,1)',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(60,141,188,1)',
-          data                : [28, 48, 40, 19, 86, 27, 90]
+          data                : [28, 48, 40, 19, 86, 27, 90, 34, 55, 22, 60, 72]
         },
         {
-          label               : 'Electronics',
+          label               : 'Ingresos',
           backgroundColor     : 'rgba(210, 214, 222, 1)',
           borderColor         : 'rgba(210, 214, 222, 1)',
           pointRadius         : false,
@@ -410,7 +354,7 @@ include ('app/controllers/ventas/listado_de_ventas.php');
           pointStrokeColor    : '#c1c7d1',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [65, 59, 80, 81, 56, 55, 40]
+          data                : [65, 59, 80, 81, 56, 55, 40, 19, 86, 27, 90, 34]
         },
       ]
     }
@@ -442,54 +386,8 @@ include ('app/controllers/ventas/listado_de_ventas.php');
       options: areaChartOptions
     })
 
-    //-------------
-    //- LINE CHART -
-    //--------------
-    var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
-    var lineChartOptions = $.extend(true, {}, areaChartOptions)
-    var lineChartData = $.extend(true, {}, areaChartData)
-    lineChartData.datasets[0].fill = false;
-    lineChartData.datasets[1].fill = false;
-    lineChartOptions.datasetFill = false
-
-    var lineChart = new Chart(lineChartCanvas, {
-      type: 'line',
-      data: lineChartData,
-      options: lineChartOptions
-    })
-
-    //-------------
-    //- DONUT CHART -
-    //-------------
-    // Get context with jQuery - using jQuery's .get() method.
-    var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
-    var donutData        = {
-      labels: [
-          'Chrome',
-          'IE',
-          'FireFox',
-          'Safari',
-          'Opera',
-          'Navigator',
-      ],
-      datasets: [
-        {
-          data: [700,500,400,600,300,100],
-          backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
-        }
-      ]
-    }
-    var donutOptions     = {
-      maintainAspectRatio : false,
-      responsive : true,
-    }
-    //Create pie or douhnut chart
-    // You can switch between pie and douhnut using the method below.
-    new Chart(donutChartCanvas, {
-      type: 'doughnut',
-      data: donutData,
-      options: donutOptions
-    })
+    
+  
 
     //-------------
     //- BAR CHART -

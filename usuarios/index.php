@@ -83,15 +83,7 @@ include ('../app/controllers/usuarios/listado_de_usuarios.php');
                                 }
                                 ?>
                                 </tbody>
-                                <tfoot>
-                                <tr>
-                                    <th><center>Nro</center></th>
-                                    <th><center>Nombres</center></th>
-                                    <th><center>Email</center></th>
-                                    <th><center>Rol del usuario</center></th>
-                                    <th><center>Acciones</center></th>
-                                </tr>
-                                </tfoot>
+                                
                             </table>
                         </div>
 

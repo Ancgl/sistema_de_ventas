@@ -127,13 +127,7 @@ include ('../app/controllers/categorias/listado_de_categoria.php');
                                 }
                                 ?>
                                 </tbody>
-                                <tfoot>
-                                <tr>
-                                    <th><center>Nro</center></th>
-                                    <th><center>Nombre de la categoría</center></th>
-                                    <th><center>Acciones</center></th>
-                                </tr>
-                                </tfoot>
+                                
                             </table>
                         </div>
 

@@ -71,13 +71,7 @@ include ('../app/controllers/roles/listado_de_roles.php');
                                 }
                                 ?>
                                 </tbody>
-                                <tfoot>
-                                <tr>
-                                    <th><center>Nro</center></th>
-                                    <th><center>Nombre del rol</center></th>
-                                    <th><center>Acciones</center></th>
-                                </tr>
-                                </tfoot>
+                                
                             </table>
                         </div>
 

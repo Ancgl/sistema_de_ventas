@@ -28,7 +28,7 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        background: rgba(243, 24, 24, 0.2); /* Cambia el color y la opacidad aquí */
+        background: rgba(39, 24, 243, 0.2); /* Cambia el color y la opacidad aquí */
         z-index: 1;
         }
         .login-box {
