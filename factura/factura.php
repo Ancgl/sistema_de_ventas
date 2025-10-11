@@ -35,9 +35,9 @@ $query_productos->execute();
 $productos = $query_productos->fetchAll(PDO::FETCH_ASSOC);
 
 $empresa = [
-    "ruc" => "2000000001",
+    "ruc" => "10478545124",
     "razon" => "BODEGA DA´MART",
-    "atencion" => "Cristian Ancgl",
+    "atencion" => "Jhon Anco Galvez",
     "telefono" => "+51 958 123 456",
     "email" => "bodegadamart@gmail.com",
     
@@ -163,8 +163,7 @@ button:hover { background: #344cb9ff; }
             <td><?= $producto['cantidad'] ?></td>
             <td>UND</td>
             <td class="description">
-                <strong><?= htmlspecialchars($producto['nombre_producto']) ?></strong><br>
-                <small><?= htmlspecialchars($producto['descripcion']) ?></small>
+                <strong><?= htmlspecialchars($producto['descripcion']) ?></strong>
             </td>
             <td>S/ <?= number_format(floatval($producto['precio_venta']), 2) ?></td>
             <td>S/ <?= number_format($subtotal, 2) ?></td>
