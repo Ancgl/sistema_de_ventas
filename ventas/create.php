@@ -12,7 +12,7 @@ include ('../app/controllers/clientes/listado_de_clientes.php');
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1 class="m-0">Ventas</h1>
+                    <h1 class="m-0">Realizar Ventas</h1>
                 </div>
             </div>
         </div>
@@ -47,10 +47,10 @@ include ('../app/controllers/clientes/listado_de_clientes.php');
                             </button>
 
                             <div class="modal fade" id="modal-buscar_producto">
-                                <div class="modal-dialog modal-lg">
+                                <div class="modal-dialog modal-xl">
                                     <div class="modal-content">
                                         <div class="modal-header" style="background-color: #1d36b6;color: white">
-                                            <h4 class="modal-title">Busqueda del producto</h4>
+                                            <h4 class="modal-title">Seleccione el producto</h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>

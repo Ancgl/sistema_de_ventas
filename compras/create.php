@@ -18,7 +18,7 @@ include ('../app/controllers/compras/listado_de_compras.php');
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1 class="m-0">Registro de una nueva compra</h1>
+                    <h1 class="m-0">Realizar una nueva compra</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -55,7 +55,7 @@ include ('../app/controllers/compras/listado_de_compras.php');
                                        </button>
                                        <!-- modal para visualizar datos de los proveedor -->
                                        <div class="modal fade" id="modal-buscar_producto">
-                                           <div class="modal-dialog modal-lg">
+                                           <div class="modal-dialog modal-xl">
                                                <div class="modal-content">
                                                    <div class="modal-header" style="background-color: #1d36b6;color: white">
                                                        <h4 class="modal-title">Busqueda del producto</h4>

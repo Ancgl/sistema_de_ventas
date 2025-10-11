@@ -17,7 +17,7 @@ include ('../app/controllers/usuarios/listado_de_usuarios.php');
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1 class="m-0">Listado de usuarios</h1>
+                    <h1 class="m-0">Listado de usuarios registrados</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -28,7 +28,7 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        background: rgba(39, 24, 243, 0.2); /* Cambia el color y la opacidad aquí */
+        background: rgba(39, 24, 243, 0.1); /* Cambia el color y la opacidad aquí */
         z-index: 1;
         }
         .login-box {
@@ -37,7 +37,7 @@
         }
 
         .card {
-            background: rgba(255,255,255,0.8); /* Fondo blanco semitransparente */
+            background: rgba(20, 48, 170, 0.75); /* Fondo blanco semitransparente */
             border: none; /* Opcional: sin borde */
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.9); /* Opcional: sombra suave */
         }
@@ -76,8 +76,8 @@
     <br>
     <div class="card card-outline ">
         <div class="card-header text-center">
-            <a href="#" class="h1" style="color: #000;"><h2>Bienvenido al Sistema</h2></a>
-            <a href="" style="color: #000;">Ingrese sus Datos Correctamente</a>
+            <a href="#" class="h1" style="color: #ffffffff;"><h2>Bienvenido al Sistema</h2></a>
+            <a href="" style="color: #ffffffff;">Ingrese sus Datos Correctamente</a>
         </div>
         <div class="card-body">
             
@@ -103,13 +103,13 @@
                 <div class="row">
                     <!-- /.col -->
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary btn-block" >Iniciar Sesion</button>
+                        <button type="submit" class="btn btn-block" style="background-color: #2e6e7eff; color: #fff;" >Iniciar Sesion</button>
                     </div>
                     <!-- /.col -->
                 </div>
             </form>
             <hr>
-            <a href="" style="color: #000;">Ancgl - 2025</a>
+            <a href="" style="color: #ffffffff;">Ancgl - 2025</a>
 
         </div>
         <!-- /.card-body -->
