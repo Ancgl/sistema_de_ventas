@@ -66,10 +66,22 @@ include ('../app/controllers/clientes/cargar_cliente.php');
                                                         $precio_unitario_total = 0;
                                                         $precio_total = 0;
                                                         
-                                                        $sql_carrito = "SELECT *, pro.nombre as nombre_producto, pro.descripcion as descripcion, pro.precio_venta as precio_venta, pro.stock as stock, pro.id_producto as id_producto  FROM tb_carrito AS carr INNER JOIN tb_almacen as pro ON carr.id_producto = pro.id_producto WHERE '$nro_venta' ORDER BY id_carrito ASC";
+                                                        $sql_carrito = "SELECT *, 
+                                                        pro.nombre as nombre_producto, 
+                                                        pro.descripcion as descripcion, 
+                                                        pro.precio_venta as precio_venta, 
+                                                        pro.stock as stock, 
+                                                        pro.id_producto as id_producto  
+                                                        FROM tb_carrito AS carr 
+                                                        INNER JOIN tb_almacen as pro ON carr.id_producto = pro.id_producto 
+                                                        WHERE carr.nro_venta = :nro_venta 
+                                                        ORDER BY carr.id_carrito ASC";
+
                                                         $query_carrito = $pdo->prepare($sql_carrito);
+                                                        $query_carrito->bindParam(':nro_venta', $nro_venta, PDO::PARAM_STR);
                                                         $query_carrito->execute();
                                                         $carrito_datos = $query_carrito->fetchAll(PDO::FETCH_ASSOC);
+
                                                         foreach ($carrito_datos as $carrito_dato) {
                                                             $id_carrito = $carrito_dato ['id_carrito'];
                                                             $contador_de_carrito = $contador_de_carrito + 1; 

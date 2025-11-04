@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-10-2025 a las 00:31:02
+-- Tiempo de generación: 04-11-2025 a las 21:41:36
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -54,15 +54,16 @@ INSERT INTO `tb_almacen` (`id_producto`, `codigo`, `nombre`, `descripcion`, `sto
 (5, 'P-00005', 'Papas Lays Clásicas', 'Papas Lays Clásicas en bolsa 180g', 15, 5, 30, '2', '2', '2025-09-24', '2025-09-24-06-06-19__papalays.jpg', 3, 4, '2025-09-24 18:06:19', '2025-09-24 18:07:37'),
 (6, 'P-00003', 'Coca Cola ', 'Coca Cola Original 1 lt ', 19, 5, 25, '6', '8', '2025-10-11', '2025-10-11-12-42-50__Coca-Cola- 1ltr.jpg', 3, 1, '2025-10-11 12:42:50', '0000-00-00 00:00:00'),
 (7, 'P-00004', 'Inca Cola ', 'Inka Cola Original 1 lt ', 20, 5, 25, '6', '8', '2025-10-11', '2025-10-11-12-43-55__Inca Kola 1ltr.jpg', 3, 1, '2025-10-11 12:43:55', '0000-00-00 00:00:00'),
-(8, 'P-00005', 'Yogurt Lucuma', 'Gloria yogurt lucuma 1 kg 1 KG', 9, 3, 20, '5', '6.8', '2025-10-11', '2025-10-11-12-49-54__Yogurt lucuma.png', 3, 2, '2025-10-11 12:49:54', '0000-00-00 00:00:00'),
+(8, 'P-00005', 'Yogurt Lucuma', 'Gloria yogurt lucuma 1 kg 1 KG', 10, 3, 20, '5', '6.8', '2025-10-11', '2025-10-11-12-49-54__Yogurt lucuma.png', 3, 2, '2025-10-11 12:49:54', '0000-00-00 00:00:00'),
 (9, 'P-00006', ' Mantequilla Sin Sal*200G', 'Laive Mantequilla Barra Sin Sal*200G', 15, 2, 10, '6', '9', '2025-10-11', '2025-10-11-12-53-32__matequilla.jpg', 3, 2, '2025-10-11 12:53:32', '0000-00-00 00:00:00'),
 (10, 'P-00007', 'PAN CHANCAY', 'Pan Chancay (Bolsa 4 Unidades)', 10, 2, 15, '5', '7', '2025-10-11', '2025-10-11-12-58-47__CHANCAY_GRANDE-1.jpg', 3, 11, '2025-10-11 12:58:47', '2025-10-11 12:59:56'),
-(11, 'P-00008', 'Pan Integral', 'Pan Integral Mediano Unión Bolsa 360 GR.', 9, 3, 15, '4', '5.5', '2025-10-11', '2025-10-11-01-06-34__integral.jpg', 3, 11, '2025-10-11 13:06:34', '2025-10-11 13:06:44'),
-(12, 'P-00009', 'ACEITE VEGETAL900 ML.', 'Aceite Vegetal Mirasol X 900 ML.', 10, 2, 20, '6', '7.8', '2025-10-11', '2025-10-11-01-12-22__aceite-vegetaljpg.jpg', 3, 2, '2025-10-11 13:12:09', '2025-10-11 13:12:22'),
+(11, 'P-00008', 'Pan Integral', 'Pan Integral Mediano Unión Bolsa 360 GR.', 10, 3, 15, '4', '5.5', '2025-10-11', '2025-10-11-01-06-34__integral.jpg', 3, 11, '2025-10-11 13:06:34', '2025-10-11 13:06:44'),
+(12, 'P-00009', 'ACEITE VEGETAL900 ML.', 'Aceite Vegetal Mirasol X 900 ML.', 9, 2, 20, '6', '7.8', '2025-10-11', '2025-10-11-01-12-22__aceite-vegetaljpg.jpg', 3, 2, '2025-10-11 13:12:09', '2025-10-11 13:12:22'),
 (13, 'P-00010', 'Arroz Costeño 750 g.', 'Arroz Superior Costeño Bolsa 750 g.', 10, 2, 20, '3', '4.5', '2025-10-11', '2025-10-11-01-21-10__ARROZ.jpg', 3, 13, '2025-10-11 13:21:10', '2025-10-11 16:18:49'),
 (14, 'P-00011', 'Mermelada de Fresa 800 g.', 'Mermelada de Fresa Fanny Doy pack 800 g.', 13, 3, 20, '6', '7.7', '2025-10-11', '2025-10-11-04-14-46__Mermeladafresa.jpg', 3, 6, '2025-10-11 16:14:46', '2025-10-11 16:16:52'),
 (15, 'P-00012', 'Azúcar Rubia 1Kg', 'Azúcar Rubia CARTAVIO Bolsa 1Kg', 10, 2, 20, '4', '5', '2025-10-11', '2025-10-11-04-18-15__azucr1kg.png', 3, 13, '2025-10-11 16:18:15', '2025-10-11 16:18:33'),
-(16, 'P-00013', 'Mikes Limón  lata 355 ml', 'Mikes Hard Lemonade Limón en lata 355 ml', 15, 5, 50, '3', '4.5', '2025-10-11', '2025-10-11-04-29-41__mikes.jpg', 3, 1, '2025-10-11 16:29:41', '0000-00-00 00:00:00');
+(16, 'P-00013', 'Mikes Limón  lata 355 ml', 'Mikes Hard Lemonade Limón en lata 355 ml', 12, 5, 50, '3', '4.5', '2025-10-11', '2025-10-11-04-29-41__mikes.jpg', 3, 1, '2025-10-11 16:29:41', '0000-00-00 00:00:00'),
+(17, 'P-00014', 'Guarana 3L', 'Gaseosa Guaraná Botella 3L.', 8, 3, 15, '5.00', '6.90', '2025-10-29', '2025-10-30-01-30-49__guarana.jpg', 3, 1, '2025-10-29 17:49:11', '2025-10-30 13:31:46');
 
 -- --------------------------------------------------------
 
@@ -84,9 +85,10 @@ CREATE TABLE `tb_carrito` (
 --
 
 INSERT INTO `tb_carrito` (`id_carrito`, `nro_venta`, `id_producto`, `cantidad`, `fyh_creacion`, `fyh_actualizacion`) VALUES
-(47, 1, 6, 1, '2025-10-11 17:21:35', '2025-10-11 17:21:35'),
-(48, 1, 8, 1, '2025-10-11 17:21:43', '2025-10-11 17:21:43'),
-(49, 1, 11, 1, '2025-10-11 17:22:07', '2025-10-11 17:22:07');
+(51, 1, 6, 1, '2025-11-04 15:08:05', '2025-11-04 15:08:05'),
+(52, 1, 16, 3, '2025-11-04 15:08:12', '2025-11-04 15:08:12'),
+(53, 2, 12, 1, '2025-11-04 15:08:48', '2025-11-04 15:08:48'),
+(54, 2, 17, 2, '2025-11-04 15:08:58', '2025-11-04 15:08:58');
 
 -- --------------------------------------------------------
 
@@ -166,7 +168,8 @@ CREATE TABLE `tb_compras` (
 --
 
 INSERT INTO `tb_compras` (`id_compra`, `id_producto`, `nro_compra`, `fecha_compra`, `id_proveedor`, `comprobante`, `id_usuario`, `precio_compra`, `cantidad`, `fyh_creacion`, `fyh_actualizacion`) VALUES
-(18, 14, 1, '2025-10-11', 12, '0000001', 3, '6', 5, '2025-10-11 17:20:24', '0000-00-00 00:00:00');
+(18, 14, 1, '2025-10-11', 12, '0000001', 3, '6', 5, '2025-10-11 17:20:24', '0000-00-00 00:00:00'),
+(19, 17, 2, '2025-10-29', 11, '0001001', 3, '1.50', 5, '2025-10-29 17:54:05', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -250,7 +253,7 @@ CREATE TABLE `tb_ventas` (
   `id_venta` int(11) NOT NULL,
   `nro_venta` int(11) NOT NULL,
   `id_cliente` int(11) NOT NULL,
-  `total_pagado` int(11) NOT NULL,
+  `total_pagado` decimal(10,2) DEFAULT NULL,
   `fyh_creacion` datetime NOT NULL,
   `fyh_actualizacion` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -260,7 +263,8 @@ CREATE TABLE `tb_ventas` (
 --
 
 INSERT INTO `tb_ventas` (`id_venta`, `nro_venta`, `id_cliente`, `total_pagado`, `fyh_creacion`, `fyh_actualizacion`) VALUES
-(24, 1, 3, 20, '2025-10-11 17:22:27', '2025-10-11 17:22:27');
+(26, 1, 1, 21.50, '2025-11-04 15:08:25', '2025-11-04 15:08:25'),
+(27, 2, 3, 21.60, '2025-11-04 15:09:08', '2025-11-04 15:09:08');
 
 --
 -- Índices para tablas volcadas
@@ -339,13 +343,13 @@ ALTER TABLE `tb_ventas`
 -- AUTO_INCREMENT de la tabla `tb_almacen`
 --
 ALTER TABLE `tb_almacen`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_carrito`
 --
 ALTER TABLE `tb_carrito`
-  MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_categorias`
@@ -363,7 +367,7 @@ ALTER TABLE `tb_clientes`
 -- AUTO_INCREMENT de la tabla `tb_compras`
 --
 ALTER TABLE `tb_compras`
-  MODIFY `id_compra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_compra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_proveedores`
@@ -387,7 +391,7 @@ ALTER TABLE `tb_usuarios`
 -- AUTO_INCREMENT de la tabla `tb_ventas`
 --
 ALTER TABLE `tb_ventas`
-  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- Restricciones para tablas volcadas
